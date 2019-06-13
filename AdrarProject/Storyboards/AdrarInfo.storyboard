@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--L'ADRAR-->
+        <scene sceneID="S4H-Mw-Vbe">
+            <objects>
+                <viewController title="L'ADRAR" id="gJt-oX-kyt" customClass="AdrarController" customModule="AdrarProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fPu-Lj-mQ0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BmK-YT-3GW">
+                                <rect key="frame" x="8" y="106" width="398" height="748"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Le Pôle Numérique, vous propose des formations innovantes aux métiers &amp; technologies du numérique accessibles – avec ou sans diplôme – dans les domaines du Développement d’applications web &amp; mobiles, du support et administration des Systèmes &amp; Réseaux et de la transformation numérique des entreprises.
+ 
+Nos formations « métiers » vous permettront de certifier vos compétences, acquérir de l’expérience, obtenir un titre professionnel niveaux IV (niv. Bac), III (niv. Bac+2) et II (niv. Bac+3) et surtout…DEVENIR UN PROFESSIONNEL ACTIF DU SECTEUR NUMÉRIQUE ET INFORMATIQUE EN OCCITANIE… et au-delà.
+
+Contactez un conseiller, il vous accompagnera dans la concrétisation de votre projet de formation et votre projet professionnel.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Une équipe pédagogique à votre disposition">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Le Pôle numérique s’appuie sur une équipe d’une vingtaine de formateurs experts dans leur domaine. Ils possèdent tous une expérience de plus de 5 ans dans le métier et sont formés à la pédagogie pour adultes.
+
+Chaque dispositif est suivi par un formateur référent : il est le garant technique et gère au quotidien la formation.
+
+La coordinatrice de la filière prend en charge l’adaptation de votre parcours de formation, la mise en place de son individualisation, ainsi que la coordination des groupes et votre suivi individuel tout au long du parcours.
+
+</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="Les locaux à votre disposition">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Helvetica-Bold"/>
+                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">
+Nous dispensons nos formations dans plus de 4000m² de locaux et sommes en capacité d’intervenir sur l’ensemble de la Région Occitanie.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="Helvetica"/>
+                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OLY-mi-ZxZ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="10"/>
+                                <color key="backgroundColor" red="0.2784313725" green="0.76470588240000004" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="vyH-fv-svf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KcZ-yP-lbw" firstAttribute="bottom" secondItem="BmK-YT-3GW" secondAttribute="bottom" constant="8" id="3dA-WK-6zP"/>
+                            <constraint firstItem="BmK-YT-3GW" firstAttribute="top" secondItem="OLY-mi-ZxZ" secondAttribute="bottom" constant="8" id="B7L-bX-MDF"/>
+                            <constraint firstItem="KcZ-yP-lbw" firstAttribute="trailing" secondItem="OLY-mi-ZxZ" secondAttribute="trailing" id="JFp-y5-nxC"/>
+                            <constraint firstItem="OLY-mi-ZxZ" firstAttribute="top" secondItem="KcZ-yP-lbw" secondAttribute="top" id="KHC-2O-iuE"/>
+                            <constraint firstItem="KcZ-yP-lbw" firstAttribute="trailing" secondItem="BmK-YT-3GW" secondAttribute="trailing" constant="8" id="ecH-2l-uWj"/>
+                            <constraint firstItem="OLY-mi-ZxZ" firstAttribute="leading" secondItem="KcZ-yP-lbw" secondAttribute="leading" id="nne-It-7Cu"/>
+                            <constraint firstItem="BmK-YT-3GW" firstAttribute="leading" secondItem="KcZ-yP-lbw" secondAttribute="leading" constant="8" id="vgR-nV-5cW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KcZ-yP-lbw"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="ADRAR" id="Wwr-gW-2xt">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron" id="tPu-hK-5VY">
+                            <inset key="imageInsets" minX="-12" minY="1" maxX="0.0" maxY="-3"/>
+                            <color key="tintColor" red="0.2784313725" green="0.76470588240000004" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backMenuFromAdrar:" destination="gJt-oX-kyt" id="OB4-f7-yE6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="AdrarPresentation" destination="BmK-YT-3GW" id="COY-sn-erK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pO4-0j-4xV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4137.68115942029" y="31.473214285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6e6-KU-nFs">
+            <objects>
+                <navigationController storyboardIdentifier="AdrarInfo" automaticallyAdjustsScrollViewInsets="NO" id="cE3-ka-IRF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i0o-dM-H5x">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gJt-oX-kyt" kind="relationship" relationship="rootViewController" id="OxO-nI-KSf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D7t-XW-BlW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3227.536231884058" y="31.473214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron" width="64" height="64"/>
+    </resources>
+</document>
