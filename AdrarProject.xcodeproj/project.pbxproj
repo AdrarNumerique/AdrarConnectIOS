@@ -46,6 +46,10 @@
 		B2FC87A822AA924700074A37 /* FormationCollectionViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC87A722AA924700074A37 /* FormationCollectionViewViewController.swift */; };
 		B2FC87AA22AA950600074A37 /* FormationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FC87A922AA950600074A37 /* FormationCollectionViewCell.swift */; };
 		B2FC87AC22AA964B00074A37 /* FormationB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FC87AB22AA964B00074A37 /* FormationB.storyboard */; };
+		B2FEE8EB22B385700039ED12 /* UtilisateurCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEE8EA22B385700039ED12 /* UtilisateurCollection.swift */; };
+		B2FEE8ED22B390520039ED12 /* QuestionReponseCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEE8EC22B390520039ED12 /* QuestionReponseCollection.swift */; };
+		B2FEE8EF22B397990039ED12 /* QuestionReponseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEE8EE22B397990039ED12 /* QuestionReponseCell.swift */; };
+		B2FFCE2222B2562200638C4A /* ProgressBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FFCE2122B2562200638C4A /* ProgressBarCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,10 @@
 		B2FC87A722AA924700074A37 /* FormationCollectionViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationCollectionViewViewController.swift; sourceTree = "<group>"; };
 		B2FC87A922AA950600074A37 /* FormationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2FC87AB22AA964B00074A37 /* FormationB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FormationB.storyboard; sourceTree = "<group>"; };
+		B2FEE8EA22B385700039ED12 /* UtilisateurCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilisateurCollection.swift; sourceTree = "<group>"; };
+		B2FEE8EC22B390520039ED12 /* QuestionReponseCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReponseCollection.swift; sourceTree = "<group>"; };
+		B2FEE8EE22B397990039ED12 /* QuestionReponseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReponseCell.swift; sourceTree = "<group>"; };
+		B2FFCE2122B2562200638C4A /* ProgressBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,15 +164,17 @@
 		B24964F72295CFDF00CF9AB6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B27E6E8C22A938C000E0D9C9 /* Formation.swift */,
 				B27E6E8E22A9392800E0D9C9 /* Utilisateur.swift */,
+				B2FEE8EA22B385700039ED12 /* UtilisateurCollection.swift */,
+				B27E6E8C22A938C000E0D9C9 /* Formation.swift */,
 				B27E6E9022A94AD900E0D9C9 /* FormationCollection.swift */,
-				B21A382B22B13D53004E0A02 /* QuestionReponse.swift */,
 				B21A382D22B13DB7004E0A02 /* FormationT.swift */,
 				B21A382F22B13E34004E0A02 /* Adresse.swift */,
 				B21A383122B13FC3004E0A02 /* Document.swift */,
 				B21A383322B13FD4004E0A02 /* SessionCollective.swift */,
 				B21A383522B14043004E0A02 /* CentreFormation.swift */,
+				B21A382B22B13D53004E0A02 /* QuestionReponse.swift */,
+				B2FEE8EC22B390520039ED12 /* QuestionReponseCollection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -178,6 +188,8 @@
 				B2FC87A922AA950600074A37 /* FormationCollectionViewCell.swift */,
 				B209102222B0E9EE00DC2917 /* SegueFromLeft.swift */,
 				B209102422B0EA9100DC2917 /* SegueFromRight.swift */,
+				B2FFCE2122B2562200638C4A /* ProgressBarCustom.swift */,
+				B2FEE8EE22B397990039ED12 /* QuestionReponseCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -363,6 +375,7 @@
 				B21A383022B13E34004E0A02 /* Adresse.swift in Sources */,
 				B21A383422B13FD4004E0A02 /* SessionCollective.swift in Sources */,
 				B21A383622B14043004E0A02 /* CentreFormation.swift in Sources */,
+				B2FEE8EB22B385700039ED12 /* UtilisateurCollection.swift in Sources */,
 				B209102522B0EA9100DC2917 /* SegueFromRight.swift in Sources */,
 				B21A382E22B13DB7004E0A02 /* FormationT.swift in Sources */,
 				B21A382C22B13D53004E0A02 /* QuestionReponse.swift in Sources */,
@@ -380,8 +393,11 @@
 				B2F730602295CF7200AA2164 /* AppDelegate.swift in Sources */,
 				B27E6E8F22A9392800E0D9C9 /* Utilisateur.swift in Sources */,
 				B2077E5722A526550085111B /* MenuController.swift in Sources */,
+				B2FEE8EF22B397990039ED12 /* QuestionReponseCell.swift in Sources */,
 				B209102F22B10A6500DC2917 /* FAQTableViewController.swift in Sources */,
 				B2FC87A822AA924700074A37 /* FormationCollectionViewViewController.swift in Sources */,
+				B2FEE8ED22B390520039ED12 /* QuestionReponseCollection.swift in Sources */,
+				B2FFCE2222B2562200638C4A /* ProgressBarCustom.swift in Sources */,
 				B209102A22B106B900DC2917 /* AuthentificationControllerViewController.swift in Sources */,
 				B2F71BD722A69C420079D6F9 /* AdrarController.swift in Sources */,
 				B27E6E8D22A938C000E0D9C9 /* Formation.swift in Sources */,

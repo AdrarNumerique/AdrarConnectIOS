@@ -10,6 +10,9 @@ import UIKit
 
 class AuthentificationControllerViewController: UIViewController {
 
+    @IBOutlet weak var emailTf: UITextField!
+    @IBOutlet weak var motDePasseTf: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

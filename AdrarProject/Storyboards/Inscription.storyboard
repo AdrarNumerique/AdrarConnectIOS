@@ -32,61 +32,74 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="inscriptionBtn:" destination="3AK-lb-OVe" eventType="touchUpInside" id="psz-V3-Tez"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créer un compte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RD4-TP-OB7">
-                                        <rect key="frame" x="12" y="12" width="327" height="70"/>
+                                        <rect key="frame" x="12" y="12" width="327" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="R4t-7j-SEw"/>
+                                            <constraint firstAttribute="height" constant="45" id="R4t-7j-SEw"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="78I-eu-O2I">
-                                        <rect key="frame" x="12" y="94" width="327" height="339"/>
+                                        <rect key="frame" x="12" y="87" width="327" height="346"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prénom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-5c-zyl">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="45"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prénom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-5c-zyl">
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8g-DZ-Vn4">
-                                                <rect key="frame" x="0.0" y="64" width="327" height="45"/>
+                                                <rect key="frame" x="0.0" y="65" width="327" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12P-FW-xdB">
-                                                <rect key="frame" x="0.0" y="128" width="327" height="45"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12P-FW-xdB">
+                                                <rect key="frame" x="0.0" y="130" width="327" height="46"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot De Passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsY-07-TJl">
-                                                <rect key="frame" x="0.0" y="192" width="327" height="45"/>
+                                                <rect key="frame" x="0.0" y="195" width="327" height="45.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Mot De Passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9q-tl-HxX">
-                                                <rect key="frame" x="0.0" y="256" width="327" height="83"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <rect key="frame" x="0.0" y="259.5" width="327" height="86.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvO-pC-3kL">
+                                        <rect key="frame" x="8" y="57" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Rb9-br-sGc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="0.33333333329999998" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="zWD-iD-rKp" firstAttribute="top" secondItem="78I-eu-O2I" secondAttribute="bottom" constant="12" id="2b3-1P-Xw5"/>
                                     <constraint firstItem="RD4-TP-OB7" firstAttribute="top" secondItem="IIa-af-SCX" secondAttribute="top" constant="12" id="5T2-Fv-NHi"/>
+                                    <constraint firstItem="pvO-pC-3kL" firstAttribute="leading" secondItem="IIa-af-SCX" secondAttribute="leading" constant="8" id="5yL-WH-U2Y"/>
+                                    <constraint firstItem="78I-eu-O2I" firstAttribute="top" secondItem="pvO-pC-3kL" secondAttribute="bottom" id="9DV-0Q-lSe"/>
                                     <constraint firstAttribute="bottom" secondItem="zWD-iD-rKp" secondAttribute="bottom" constant="12" id="Ccr-S3-d9L"/>
                                     <constraint firstItem="zWD-iD-rKp" firstAttribute="leading" secondItem="IIa-af-SCX" secondAttribute="leading" constant="12" id="FyQ-NS-mNB"/>
                                     <constraint firstAttribute="trailing" secondItem="zWD-iD-rKp" secondAttribute="trailing" constant="12" id="GGz-LA-BlH"/>
-                                    <constraint firstItem="78I-eu-O2I" firstAttribute="top" secondItem="RD4-TP-OB7" secondAttribute="bottom" constant="12" id="Xti-CC-bnE"/>
+                                    <constraint firstItem="pvO-pC-3kL" firstAttribute="top" secondItem="RD4-TP-OB7" secondAttribute="bottom" id="aif-3X-iD6"/>
                                     <constraint firstAttribute="trailing" secondItem="78I-eu-O2I" secondAttribute="trailing" constant="12" id="apc-dX-mEu"/>
                                     <constraint firstItem="RD4-TP-OB7" firstAttribute="leading" secondItem="IIa-af-SCX" secondAttribute="leading" constant="12" id="lQ7-Jl-A4i"/>
                                     <constraint firstItem="78I-eu-O2I" firstAttribute="leading" secondItem="IIa-af-SCX" secondAttribute="leading" constant="12" id="qBE-3M-gyS"/>
+                                    <constraint firstAttribute="trailing" secondItem="pvO-pC-3kL" secondAttribute="trailing" constant="8" id="qwg-rc-nev"/>
                                     <constraint firstAttribute="trailing" secondItem="RD4-TP-OB7" secondAttribute="trailing" constant="12" id="rYg-Sh-V0a"/>
                                 </constraints>
                             </view>
@@ -120,6 +133,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="confirmMdpTf" destination="i9q-tl-HxX" id="8aB-22-tFf"/>
+                        <outlet property="emailTf" destination="12P-FW-xdB" id="plE-Ts-ybA"/>
+                        <outlet property="mdpTf" destination="RsY-07-TJl" id="nmD-xQ-epu"/>
+                        <outlet property="nomTf" destination="y8g-DZ-Vn4" id="Jlh-Tv-9mA"/>
+                        <outlet property="prenomTf" destination="HZg-5c-zyl" id="9R0-CY-97T"/>
+                        <outlet property="returnError" destination="pvO-pC-3kL" id="pDz-2C-WJD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNN-yh-3uw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

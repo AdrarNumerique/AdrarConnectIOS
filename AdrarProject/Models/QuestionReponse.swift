@@ -8,8 +8,20 @@
 
 import Foundation
 
-struct QuestionReponse {
-    private var id:Int
-    private var question:String
-    private var reponse:String
+
+class QuestionReponse {
+    private var _question:String
+    private var _reponse:String
+    
+    var question:String {
+        return _question
+    }
+    var reponse:String {
+        return _reponse
+    }
+    
+    init(question:String,reponse:String) {
+        _question = question
+        _reponse = reponse
+    }
 }
