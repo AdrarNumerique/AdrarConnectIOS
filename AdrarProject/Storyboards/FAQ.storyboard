@@ -64,6 +64,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="kpR-KT-KDg">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron" id="MQr-AT-NoR">
+                            <inset key="imageInsets" minX="-12" minY="1" maxX="0.0" maxY="-3"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="backButton:" destination="897-eW-mVE" id="pRz-vd-ZHu"/>

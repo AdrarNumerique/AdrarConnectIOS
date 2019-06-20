@@ -14,11 +14,13 @@ class QuestionReponseCollection{
         var questionsReponses: [QuestionReponse] = []
         
         questionsReponses.append(QuestionReponse(
+            id:0,
             question:"maquestion0",
             reponse:"mareponse0"
             )
         )
         questionsReponses.append(QuestionReponse(
+            id:1,
             question:"maquestion1",
             reponse:"mareponse1"
             )

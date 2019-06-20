@@ -21,7 +21,10 @@ class UtilisateurCollection{
         return utilisateurs.count
     }
     
-   
-    
+    func getTest() {
+        for utilisateur in utilisateurs {
+            print(utilisateur._prenom,utilisateur._nom,utilisateur.email,utilisateur.mdp)
+        }
+    }
 }
 

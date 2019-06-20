@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B200DD6422BB79B500428ECB /* Erreur.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200DD6322BB79B500428ECB /* Erreur.swift */; };
 		B2077E4B22A50B1E0085111B /* FAQ.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2077E4A22A50B1E0085111B /* FAQ.storyboard */; };
 		B2077E4D22A50B2F0085111B /* ProcessusInscription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2077E4C22A50B2F0085111B /* ProcessusInscription.storyboard */; };
 		B2077E5322A522480085111B /* Nav.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2077E5222A522480085111B /* Nav.swift */; };
@@ -17,16 +18,18 @@
 		B209102722B0ECF600DC2917 /* AdrarInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B209102622B0ECF600DC2917 /* AdrarInfo.storyboard */; };
 		B209102A22B106B900DC2917 /* AuthentificationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B209102922B106B900DC2917 /* AuthentificationControllerViewController.swift */; };
 		B209102F22B10A6500DC2917 /* FAQTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B209102E22B10A6500DC2917 /* FAQTableViewController.swift */; };
+		B20B57A622BA7C37004841F3 /* TypeDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20B57A522BA7C37004841F3 /* TypeDocument.swift */; };
+		B20B57A922BA7CBD004841F3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20B57A822BA7CBD004841F3 /* WebView.swift */; };
 		B21A382222B127C6004E0A02 /* AccueilEspace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B21A382122B127C6004E0A02 /* AccueilEspace.storyboard */; };
 		B21A382622B13743004E0A02 /* AccueilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A382522B13743004E0A02 /* AccueilViewController.swift */; };
 		B21A382822B13751004E0A02 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A382722B13751004E0A02 /* DocumentsViewController.swift */; };
 		B21A382A22B13761004E0A02 /* InformationsSuppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A382922B13761004E0A02 /* InformationsSuppViewController.swift */; };
 		B21A382C22B13D53004E0A02 /* QuestionReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A382B22B13D53004E0A02 /* QuestionReponse.swift */; };
 		B21A382E22B13DB7004E0A02 /* FormationT.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A382D22B13DB7004E0A02 /* FormationT.swift */; };
-		B21A383022B13E34004E0A02 /* Adresse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A382F22B13E34004E0A02 /* Adresse.swift */; };
 		B21A383222B13FC3004E0A02 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A383122B13FC3004E0A02 /* Document.swift */; };
-		B21A383422B13FD4004E0A02 /* SessionCollective.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A383322B13FD4004E0A02 /* SessionCollective.swift */; };
+		B21A383422B13FD4004E0A02 /* InformationCollective.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A383322B13FD4004E0A02 /* InformationCollective.swift */; };
 		B21A383622B14043004E0A02 /* CentreFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A383522B14043004E0A02 /* CentreFormation.swift */; };
+		B22AAEA322BA218A0086BECC /* InformationCollective.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22AAEA222BA218A0086BECC /* InformationCollective.storyboard */; };
 		B22B3A0C22A7BC4100103191 /* ProcessusInscriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22B3A0B22A7BC4100103191 /* ProcessusInscriptionController.swift */; };
 		B24964FD2295D0C900CF9AB6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24964FC2295D0C900CF9AB6 /* Constants.swift */; };
 		B27E6E8D22A938C000E0D9C9 /* Formation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E6E8C22A938C000E0D9C9 /* Formation.swift */; };
@@ -53,6 +56,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B200DD6322BB79B500428ECB /* Erreur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Erreur.swift; sourceTree = "<group>"; };
 		B2077E4A22A50B1E0085111B /* FAQ.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FAQ.storyboard; sourceTree = "<group>"; };
 		B2077E4C22A50B2F0085111B /* ProcessusInscription.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProcessusInscription.storyboard; sourceTree = "<group>"; };
 		B2077E5222A522480085111B /* Nav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav.swift; sourceTree = "<group>"; };
@@ -63,16 +67,18 @@
 		B209102622B0ECF600DC2917 /* AdrarInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdrarInfo.storyboard; sourceTree = "<group>"; };
 		B209102922B106B900DC2917 /* AuthentificationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationControllerViewController.swift; sourceTree = "<group>"; };
 		B209102E22B10A6500DC2917 /* FAQTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQTableViewController.swift; sourceTree = "<group>"; };
+		B20B57A522BA7C37004841F3 /* TypeDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeDocument.swift; sourceTree = "<group>"; };
+		B20B57A822BA7CBD004841F3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B21A382122B127C6004E0A02 /* AccueilEspace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccueilEspace.storyboard; sourceTree = "<group>"; };
 		B21A382522B13743004E0A02 /* AccueilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccueilViewController.swift; sourceTree = "<group>"; };
 		B21A382722B13751004E0A02 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		B21A382922B13761004E0A02 /* InformationsSuppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsSuppViewController.swift; sourceTree = "<group>"; };
 		B21A382B22B13D53004E0A02 /* QuestionReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReponse.swift; sourceTree = "<group>"; };
 		B21A382D22B13DB7004E0A02 /* FormationT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormationT.swift; sourceTree = "<group>"; };
-		B21A382F22B13E34004E0A02 /* Adresse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adresse.swift; sourceTree = "<group>"; };
 		B21A383122B13FC3004E0A02 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		B21A383322B13FD4004E0A02 /* SessionCollective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCollective.swift; sourceTree = "<group>"; };
+		B21A383322B13FD4004E0A02 /* InformationCollective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCollective.swift; sourceTree = "<group>"; };
 		B21A383522B14043004E0A02 /* CentreFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentreFormation.swift; sourceTree = "<group>"; };
+		B22AAEA222BA218A0086BECC /* InformationCollective.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationCollective.storyboard; sourceTree = "<group>"; };
 		B22B3A0B22A7BC4100103191 /* ProcessusInscriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessusInscriptionController.swift; sourceTree = "<group>"; };
 		B24964FC2295D0C900CF9AB6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B27E6E8C22A938C000E0D9C9 /* Formation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formation.swift; sourceTree = "<group>"; };
@@ -135,6 +141,16 @@
 			path = FAQ;
 			sourceTree = "<group>";
 		};
+		B20B57A722BA7C99004841F3 /* Collection test */ = {
+			isa = PBXGroup;
+			children = (
+				B2FEE8EA22B385700039ED12 /* UtilisateurCollection.swift */,
+				B27E6E9022A94AD900E0D9C9 /* FormationCollection.swift */,
+				B2FEE8EC22B390520039ED12 /* QuestionReponseCollection.swift */,
+			);
+			path = "Collection test";
+			sourceTree = "<group>";
+		};
 		B21A382322B127CD004E0A02 /* Espace */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,17 +180,17 @@
 		B24964F72295CFDF00CF9AB6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B20B57A722BA7C99004841F3 /* Collection test */,
 				B27E6E8E22A9392800E0D9C9 /* Utilisateur.swift */,
-				B2FEE8EA22B385700039ED12 /* UtilisateurCollection.swift */,
-				B27E6E8C22A938C000E0D9C9 /* Formation.swift */,
-				B27E6E9022A94AD900E0D9C9 /* FormationCollection.swift */,
-				B21A382D22B13DB7004E0A02 /* FormationT.swift */,
-				B21A382F22B13E34004E0A02 /* Adresse.swift */,
+				B200DD6322BB79B500428ECB /* Erreur.swift */,
+				B20B57A822BA7CBD004841F3 /* WebView.swift */,
 				B21A383122B13FC3004E0A02 /* Document.swift */,
-				B21A383322B13FD4004E0A02 /* SessionCollective.swift */,
-				B21A383522B14043004E0A02 /* CentreFormation.swift */,
 				B21A382B22B13D53004E0A02 /* QuestionReponse.swift */,
-				B2FEE8EC22B390520039ED12 /* QuestionReponseCollection.swift */,
+				B21A383522B14043004E0A02 /* CentreFormation.swift */,
+				B20B57A522BA7C37004841F3 /* TypeDocument.swift */,
+				B21A383322B13FD4004E0A02 /* InformationCollective.swift */,
+				B27E6E8C22A938C000E0D9C9 /* Formation.swift */,
+				B21A382D22B13DB7004E0A02 /* FormationT.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,12 +240,13 @@
 				B21A382322B127CD004E0A02 /* Espace */,
 				B2F730632295CF7200AA2164 /* Menu.storyboard */,
 				B2F730682295CF7400AA2164 /* LaunchScreen.storyboard */,
-				B2077E4A22A50B1E0085111B /* FAQ.storyboard */,
 				B2077E4C22A50B2F0085111B /* ProcessusInscription.storyboard */,
 				B2B3812722A90DB000338520 /* Inscription.storyboard */,
 				B2FC87AB22AA964B00074A37 /* FormationB.storyboard */,
 				B209102022B0E5BF00DC2917 /* Authentification.storyboard */,
 				B209102622B0ECF600DC2917 /* AdrarInfo.storyboard */,
+				B2077E4A22A50B1E0085111B /* FAQ.storyboard */,
+				B22AAEA222BA218A0086BECC /* InformationCollective.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -355,6 +372,7 @@
 				B2F730672295CF7400AA2164 /* Assets.xcassets in Resources */,
 				B2F730652295CF7200AA2164 /* Menu.storyboard in Resources */,
 				B2B3812822A90DB000338520 /* Inscription.storyboard in Resources */,
+				B22AAEA322BA218A0086BECC /* InformationCollective.storyboard in Resources */,
 				B209102722B0ECF600DC2917 /* AdrarInfo.storyboard in Resources */,
 				B2FC87AC22AA964B00074A37 /* FormationB.storyboard in Resources */,
 				B2077E4D22A50B2F0085111B /* ProcessusInscription.storyboard in Resources */,
@@ -372,8 +390,7 @@
 				B209102322B0E9EE00DC2917 /* SegueFromLeft.swift in Sources */,
 				B2F730622295CF7200AA2164 /* ViewController.swift in Sources */,
 				B27E6E9122A94AD900E0D9C9 /* FormationCollection.swift in Sources */,
-				B21A383022B13E34004E0A02 /* Adresse.swift in Sources */,
-				B21A383422B13FD4004E0A02 /* SessionCollective.swift in Sources */,
+				B21A383422B13FD4004E0A02 /* InformationCollective.swift in Sources */,
 				B21A383622B14043004E0A02 /* CentreFormation.swift in Sources */,
 				B2FEE8EB22B385700039ED12 /* UtilisateurCollection.swift in Sources */,
 				B209102522B0EA9100DC2917 /* SegueFromRight.swift in Sources */,
@@ -381,10 +398,12 @@
 				B21A382C22B13D53004E0A02 /* QuestionReponse.swift in Sources */,
 				B27E6E9822A9532600E0D9C9 /* FormationDetailController.swift in Sources */,
 				B21A382A22B13761004E0A02 /* InformationsSuppViewController.swift in Sources */,
+				B20B57A922BA7CBD004841F3 /* WebView.swift in Sources */,
 				B2E9829022A550610076A0F3 /* RoundButton.swift in Sources */,
 				B2FC87AA22AA950600074A37 /* FormationCollectionViewCell.swift in Sources */,
 				B27E6E9322A9501A00E0D9C9 /* FormationCell.swift in Sources */,
 				B21A382622B13743004E0A02 /* AccueilViewController.swift in Sources */,
+				B200DD6422BB79B500428ECB /* Erreur.swift in Sources */,
 				B21A382822B13751004E0A02 /* DocumentsViewController.swift in Sources */,
 				B21A383222B13FC3004E0A02 /* Document.swift in Sources */,
 				B22B3A0C22A7BC4100103191 /* ProcessusInscriptionController.swift in Sources */,
@@ -400,6 +419,7 @@
 				B2FFCE2222B2562200638C4A /* ProgressBarCustom.swift in Sources */,
 				B209102A22B106B900DC2917 /* AuthentificationControllerViewController.swift in Sources */,
 				B2F71BD722A69C420079D6F9 /* AdrarController.swift in Sources */,
+				B20B57A622BA7C37004841F3 /* TypeDocument.swift in Sources */,
 				B27E6E8D22A938C000E0D9C9 /* Formation.swift in Sources */,
 				B24964FD2295D0C900CF9AB6 /* Constants.swift in Sources */,
 			);

@@ -10,6 +10,7 @@ import Foundation
 
 
 class QuestionReponse {
+    private let _id:Int
     private var _question:String
     private var _reponse:String
     
@@ -20,7 +21,8 @@ class QuestionReponse {
         return _reponse
     }
     
-    init(question:String,reponse:String) {
+    init(id:Int, question:String,reponse:String) {
+        _id = id
         _question = question
         _reponse = reponse
     }

@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct SessionCollective {
-    private var id:Int
-    private var date:String
-    private var centreFormation:CentreFormation
+struct InformationCollective {
+    private var _id:Int
+    private var _date:String
+    private var _nbMaxParticipant:Int
+    private var _centreFormation:CentreFormation
 }

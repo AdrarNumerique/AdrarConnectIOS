@@ -5,11 +5,11 @@
 //  Created by Vincent Maldonado on 06/06/2019.
 //  Copyright © 2019 Vincent Maldonado. All rights reserved.
 //
-
+let myCollec = UtilisateurCollection()
 import UIKit
 
 class InscriptionController: UIViewController {
-    let myCollec = UtilisateurCollection()
+    
     
     @IBOutlet weak var prenomTf: UITextField!
     @IBOutlet weak var nomTf: UITextField!
@@ -53,22 +53,18 @@ class InscriptionController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-   // isValidEmail(testStr: email)
-    //, isValidPassword(mdp)
     @IBAction func inscriptionBtn(_ sender: Any) {
         if let prenom = prenomTf.text, prenom != "" {
             if let nom = nomTf.text, nom != "" {
-                if let email = emailTf.text{
-                    if let mdp = mdpTf.text{
-                       
+                if let email = emailTf.text, isValidEmail(testStr: email){
+                    if let mdp = mdpTf.text, isValidPassword(mdp){
                         if mdp == confirmMdpTf.text {
                             let myUser = Utilisateur(prenom: prenom, nom: nom, email: email, mdp: mdp)
-                            
                             myCollec.push(utilisateur: myUser)
                             UtilisateurCollection().push(utilisateur: myUser)
                             print(myCollec)
-                            print(myCollec.getNb())
-                            //dismiss(animated: true, completion: nil)
+                            print(myCollec.getTest())
+                            dismiss(animated: true, completion: nil)
                         } else {
                             returnError("Les deux mots de passes sont différents")
                         }

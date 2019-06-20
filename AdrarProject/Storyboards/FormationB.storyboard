@@ -119,7 +119,7 @@
                             <inset key="imageInsets" minX="-12" minY="1" maxX="0.0" maxY="-3"/>
                             <color key="tintColor" red="0.98039215690000003" green="0.6588235294" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="backButton:" destination="J8l-X9-Dq2" id="xza-I4-cFf"/>
+                                <action selector="backButton:" destination="J8l-X9-Dq2" id="UCH-7U-dqO"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

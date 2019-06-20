@@ -19,3 +19,17 @@ let DATE_FORMAT = "E, dd MMM yyyy HH:mm:ss Z"
 
 //Image
 let Fleche = UIImage(named: "chevron")
+
+//Test JSON 
+let jsonString = """
+[
+{
+"name": "Taylor Swift",
+"age": 26
+},
+{
+"name": "Justin Bieber",
+"age": 25
+}
+]
+"""

@@ -20,6 +20,7 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
         collectionView.dataSource = self
         formations = FormationCollection().all()
         // Do any additional setup after loading the view.
+      
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

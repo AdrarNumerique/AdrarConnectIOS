@@ -21,5 +21,6 @@ class AdrarController: UIViewController {
 @IBAction func backMenuFromAdrar(_ sender: Any) {
        dismiss(animated: true, completion: nil)
         
+
     }
 }
