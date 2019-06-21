@@ -1,5 +1,5 @@
 //
-//  Erreur.swift
+//  Request.swift
 //  AdrarProject
 //
 //  Created by Vincent Maldonado on 20/06/2019.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Erreur {
-    var code: Int
-    var desc: String
+struct UtilisateurRequete {
+    let ressourceUrl:URL
+    let API_KEY = ""
+    
 }

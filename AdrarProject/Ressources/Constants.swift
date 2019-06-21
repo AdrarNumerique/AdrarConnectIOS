@@ -21,15 +21,39 @@ let DATE_FORMAT = "E, dd MMM yyyy HH:mm:ss Z"
 let Fleche = UIImage(named: "chevron")
 
 //Test JSON 
-let jsonString = """
-[
-{
-"name": "Taylor Swift",
-"age": 26
-},
-{
-"name": "Justin Bieber",
-"age": 25
-}
+let jsonString:[String : Any?] = [
+    "id" : 1,
+    
+    "prenom" : "vincent",
+    
+    "nom" : "mald",
+    
+    "email" : "test@test.fr",
+    
+    "mdp" : "Azerty12&é",
+    
+    "numero" : "55",
+    
+    "voie" : "rue maran",
+    
+    "complement" : nil,
+    
+    "cp" : "31400",
+    
+    "ville" : "Toulouse",
+    
+    "ddn" : "6 /10 /1994",
+    
+    "telephone" : "0685648292",
+    
+    "numeroPe" : "0123",
+    
+    "dev" : true,
+
+    "reseau" : false,
+
+    "idSessionConnexion" : 0,
+
+    "avancementInscription" : 0
+
 ]
-"""

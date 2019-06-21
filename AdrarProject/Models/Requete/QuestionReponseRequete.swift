@@ -1,5 +1,5 @@
 //
-//  Erreur.swift
+//  QuestionReponseRequete.swift
 //  AdrarProject
 //
 //  Created by Vincent Maldonado on 20/06/2019.
@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-struct Erreur {
-    var code: Int
-    var desc: String
+struct QuestionReponseRequete {
+    let resourceURL:URL
+    
+    
 }

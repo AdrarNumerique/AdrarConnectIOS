@@ -25,7 +25,6 @@ class QuestionReponseCell: UITableViewCell {
     func setupCell(_ questionReponse: QuestionReponse){
         self.questionReponse = questionReponse
     
-        questionLbl.text = questionReponse.question
-        reponseLbl.text = questionReponse.reponse
+        
     }
 }

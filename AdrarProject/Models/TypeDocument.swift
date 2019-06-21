@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TypeDocument{
+struct TypeDocument:Decodable{
     var _id:Int
     var _nom:String
 }

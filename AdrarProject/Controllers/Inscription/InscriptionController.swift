@@ -5,7 +5,7 @@
 //  Created by Vincent Maldonado on 06/06/2019.
 //  Copyright © 2019 Vincent Maldonado. All rights reserved.
 //
-let myCollec = UtilisateurCollection()
+
 import UIKit
 
 class InscriptionController: UIViewController {
@@ -59,11 +59,7 @@ class InscriptionController: UIViewController {
                 if let email = emailTf.text, isValidEmail(testStr: email){
                     if let mdp = mdpTf.text, isValidPassword(mdp){
                         if mdp == confirmMdpTf.text {
-                            let myUser = Utilisateur(prenom: prenom, nom: nom, email: email, mdp: mdp)
-                            myCollec.push(utilisateur: myUser)
-                            UtilisateurCollection().push(utilisateur: myUser)
-                            print(myCollec)
-                            print(myCollec.getTest())
+                           
                             dismiss(animated: true, completion: nil)
                         } else {
                             returnError("Les deux mots de passes sont différents")

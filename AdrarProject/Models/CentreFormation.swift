@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CentreFormation{
+struct CentreFormation:Decodable{
     private var _id:Int
     private var _numeroVoie:String
     private var _adresse:String

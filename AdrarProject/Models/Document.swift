@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Documentb {
-    private let _id:Int
-    private var _chemin:String
-    private var _etat:String
-    private var _utilisateurPossession:Utilisateur
-    private var _typeDocument:TypeDocument
+struct Document: Decodable {
+    var id:Int
+    var chemin:String
+    var etat:String?
+    var idUser:Utilisateur
+    var type:TypeDocument
 }

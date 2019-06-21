@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct WebView {
-    var _id:Int
-    var _nom:Int
-    var _html:text_encoding_t
-    var _tel:String?
-    var _email:String?
+struct WebView:Decodable{
+    var id:Int
+    var nom:Int
+    var html:text_encoding_t
+    var tel:String?
+    var email:String?
 }

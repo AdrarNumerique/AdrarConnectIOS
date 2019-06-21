@@ -16,8 +16,19 @@ class FAQTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionsReponses = QuestionReponseCollection().all()
-        
+//        let url = ""
+//        let urlObj = URL(string: url)
+//        URLSession.shared.dataTask(with: urlObj!) {(data,response,error) in
+//            do {
+//                var questionsReponsesTest = try JSONDecoder().decode([QuestionReponse].self, from: data!)
+//                for questionReponse in questionsReponsesTest {
+//                    print(questionReponse._question)
+//                }
+//            } catch {
+//                print("erreur")
+//            }
+//        }.resume()
+//        
         
     }
     override func numberOfSections(in tableView: UITableView) -> Int {

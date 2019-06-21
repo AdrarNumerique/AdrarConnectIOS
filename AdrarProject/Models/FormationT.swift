@@ -9,8 +9,9 @@
 import Foundation
 
 struct FormationT {
-    private var _id:Int
-    private var _intitule:String
-    private var _urlPhoto:String
-    private var _html:String
+    var id: Int
+    var intitule: String
+    var filiere: Int
+    var urlPhoto: String
+    var html: String
 }
