@@ -7,43 +7,71 @@
 //
 
 import UIKit
+import WebKit
 
 
 class ProcessusInscriptionController: UIViewController {
     //Outlet
     @IBOutlet weak var SituationLbl: UILabel!
-    @IBOutlet weak var DescriptionProcess: UITextView!
+    @IBOutlet weak var descriptionWV: WKWebView!
     @IBOutlet weak var MoreInformation: UIView!
     @IBOutlet weak var ButtonToinscrire: RoundButton!
-    @IBOutlet weak var ContactInfoLbl: UILabel!
+    @IBOutlet weak var contactSV: UIStackView!
+    @IBOutlet weak var telephoneTV: UITextView!
+    @IBOutlet weak var mailTV: UITextView!
+    
+    var textSituationSalarie: String! = "page html vide "
+    var textSituationDemandeur: String! = "page html vide "
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        descriptionWV.loadHTMLString(textSituationSalarie, baseURL: nil)
+    }
+    //checker ou le plus rapide
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        catchHtml()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        //catchHtml("salarie_html", true)
     }
     
-    
+    //Function qui va aller récuperer la data dans l'objet USERDEFAULT pour récuperer les données récupérées ou non et les afficher dans la webview sous format html.
+    func catchHtml(){
+        if UserDefaults.standard.string(forKey: "salarie_html") != nil && (UserDefaults.standard.string(forKey: "demandeurEmploi_html") != nil) {
+            self.textSituationSalarie = UserDefaults.standard.string(forKey:"salarie_html")
+            self.textSituationDemandeur = UserDefaults.standard.string(forKey:"demandeurEmploi_html")
+            descriptionWV.loadHTMLString(textSituationSalarie, baseURL: nil)
+        }
+        
+        if let tel = UserDefaults.standard.string(forKey: "telephone") {
+            telephoneTV.text = "Telephone :\n\(tel)"
+        }
+        if let email = UserDefaults.standard.string(forKey: "email") {
+            mailTV.text = "Email :\n\(email)"
+        }
+    }
     // Sur le SegmentedControl un va rajouter un switch pour le nombre de possibilité de celui-ci, qui changera la valeur de zone de texte et cachera/montrera le button/contact.
     @IBAction func SegmentedSituation(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex{
         case 0: SituationLbl.text = "Salarié"
-        DescriptionProcess.text = "Se former tout au long de la vie est devenu aujourd’hui une nécessité pour chaque salarié souhaitant développer ses compétences, se perfectionner, acquérir de nouveaux savoirs, valider une expérience, ou favoriser une évolution professionnelle. Modules courts ou formations longues diplômantes, un Conseiller formation ADRAR vous accompagne dans votre projet de formation, en définissant le parcours le plus adapté. Pour répondre à vos besoins individuels de formation, plusieurs modes de financement s’offrent à vous."
+        descriptionWV.loadHTMLString(textSituationSalarie, baseURL: nil)
         ButtonToinscrire.isHidden = true
-        ContactInfoLbl.isHidden = false
-            
-        
+        contactSV.isHidden = false
             
         case 1: SituationLbl.text = "Demandeur d'Emploi"
-        DescriptionProcess.text = "Que ce soit pour retrouver un emploi, obtenir un premier emploi, développer vos compétences, obtenir un titre, un diplôme, anticiper les changements ou changer de métier… la formation est essentielle dans une vie professionnelle. Plusieurs dispositifs existent, soit dans le cadre de dispositifs de formation financés, soit en contrat de travail proposant un accès à la formation. Que vous soyez demandeur d’emploi indemnisé ou non, de nombreux dispositifs de formation peuvent vous être financés et le cas échéant rémunérés par la Région, Pôle emploi ou l’Etat."
+        descriptionWV.loadHTMLString(textSituationDemandeur, baseURL: nil)
         ButtonToinscrire.isHidden = false
-        ContactInfoLbl.isHidden = true
+        contactSV.isHidden = true
             
         default: break
         }
         
     }
+    
+    
     
     //Action pour revenir en arriere
     @IBAction func backMenu(_ sender: Any) {

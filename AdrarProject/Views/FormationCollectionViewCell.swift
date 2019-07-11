@@ -15,7 +15,7 @@ class FormationCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var intituleFormation: UILabel!
     
     
-    var formation:Formation? {
+    var formation:FormationT? {
         //permet d'effectuer une  action quand la propriété est modifiée, observer la modification de propriété stockées.
         didSet{
             if formation != nil {

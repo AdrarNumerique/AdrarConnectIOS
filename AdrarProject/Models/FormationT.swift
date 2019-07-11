@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct FormationT {
+struct FormationT:Codable{
     var id: Int
     var intitule: String
-    var filiere: Int
     var urlPhoto: String
     var html: String
 }
+

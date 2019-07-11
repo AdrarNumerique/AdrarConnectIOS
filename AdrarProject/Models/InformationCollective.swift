@@ -8,10 +8,9 @@
 
 import Foundation
 
-struct InformationCollective:Decodable {
-    var id:Int
-    var date:String
-    var nombrePlacesMax:Int
+struct InformationCollective:Codable {
+    var date:Int
+    var nbreMaxParticipant:Int
+    var complet: Int
     var centreDeFormation:CentreFormation
-    var complet: Bool
 }

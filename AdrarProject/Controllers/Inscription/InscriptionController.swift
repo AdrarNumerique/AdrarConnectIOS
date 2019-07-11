@@ -27,8 +27,6 @@ class InscriptionController: UIViewController {
             mdpTf.textContentType = .oneTimeCode
             confirmMdpTf.textContentType = .oneTimeCode
         }
-
-        // Do any additional setup after loading the view.
     }
     
     func returnError(_ error:String){
@@ -36,30 +34,31 @@ class InscriptionController: UIViewController {
         returnError.text = error
     }
     
+    //Regex utilisé pour Mot de passe
     func isValidPassword(_ password: String) -> Bool {
         let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
         return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
     }
-    
+    //Regex utilisé pour email
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
     
     //Mise en place d'une action pour revenir en arriere
     @IBAction func backMenu(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+       dismiss(animated: true, completion: nil)
     }
-    
+    //Condition pour pouvoir faire la requete post 
     @IBAction func inscriptionBtn(_ sender: Any) {
+        
         if let prenom = prenomTf.text, prenom != "" {
             if let nom = nomTf.text, nom != "" {
                 if let email = emailTf.text, isValidEmail(testStr: email){
                     if let mdp = mdpTf.text, isValidPassword(mdp){
                         if mdp == confirmMdpTf.text {
-                           
+                            //post
                             dismiss(animated: true, completion: nil)
                         } else {
                             returnError("Les deux mots de passes sont différents")

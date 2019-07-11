@@ -8,10 +8,9 @@
 
 import Foundation
 
-struct Document: Decodable {
+struct Document: Codable {
     var id:Int
     var chemin:String
-    var etat:String?
-    var idUser:Utilisateur
-    var type:TypeDocument
+    var etat:Int
+    var type:Int
 }

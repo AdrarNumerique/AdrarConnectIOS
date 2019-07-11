@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Gestion d'animation Custom pour le changement de Storyboard, vers la gauche
 class SegueFromLeft:UIStoryboardSegue {
     override func perform() {
         let src = self.source

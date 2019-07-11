@@ -44,7 +44,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="SeConnecter:" destination="a7t-Jg-ymW" eventType="touchUpInside" id="5Fk-AJ-pfT"/>
+                                            <action selector="SeConnecter:" destination="a7t-Jg-ymW" eventType="touchUpInside" id="J8L-OA-awE"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -60,16 +60,28 @@
                                     <segue destination="0tP-8t-TcZ" kind="show" id="TxA-G5-eHc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utilisateur inconnu " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tef-mv-yuB">
+                                <rect key="frame" x="0.0" y="144" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="HMf-7a-YC9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.33333333329999998" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dVE-Md-6li" firstAttribute="centerY" secondItem="bbB-1w-Auk" secondAttribute="centerY" id="AlZ-tQ-bcw"/>
                             <constraint firstItem="NRR-RU-f4V" firstAttribute="top" secondItem="dVE-Md-6li" secondAttribute="bottom" constant="50" id="Hnd-Hj-nHP"/>
+                            <constraint firstItem="Tef-mv-yuB" firstAttribute="top" secondItem="l9m-rB-mxF" secondAttribute="top" constant="80" id="IXX-UI-AJG"/>
                             <constraint firstItem="dVE-Md-6li" firstAttribute="leading" secondItem="l9m-rB-mxF" secondAttribute="leading" constant="50" id="J60-oM-UJL"/>
                             <constraint firstItem="dVE-Md-6li" firstAttribute="centerX" secondItem="bbB-1w-Auk" secondAttribute="centerX" id="Oo4-od-EFJ"/>
+                            <constraint firstItem="Tef-mv-yuB" firstAttribute="leading" secondItem="l9m-rB-mxF" secondAttribute="leading" id="XaU-sC-bav"/>
                             <constraint firstItem="l9m-rB-mxF" firstAttribute="trailing" secondItem="NRR-RU-f4V" secondAttribute="trailing" constant="70" id="Yru-S8-iVU"/>
                             <constraint firstItem="NRR-RU-f4V" firstAttribute="leading" secondItem="l9m-rB-mxF" secondAttribute="leading" constant="70" id="eTl-hb-gc3"/>
                             <constraint firstItem="l9m-rB-mxF" firstAttribute="trailing" secondItem="dVE-Md-6li" secondAttribute="trailing" constant="50" id="mYF-gx-AVj"/>
+                            <constraint firstItem="l9m-rB-mxF" firstAttribute="trailing" secondItem="Tef-mv-yuB" secondAttribute="trailing" id="r8q-Gx-OF7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="l9m-rB-mxF"/>
                     </view>
@@ -83,6 +95,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="authNonPossibleLbl" destination="Tef-mv-yuB" id="sFE-Wu-ikK"/>
                         <outlet property="emailTf" destination="g3A-dM-op9" id="nRW-Iq-mmS"/>
                         <outlet property="motDePasseTf" destination="lJc-nv-AMT" id="2ip-xw-Mt0"/>
                     </connections>

@@ -18,65 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" keyboardDismissMode="interactive" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BmK-YT-3GW">
-                                <rect key="frame" x="8" y="106" width="398" height="748"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Le Pôle Numérique, vous propose des formations innovantes aux métiers &amp; technologies du numérique accessibles – avec ou sans diplôme – dans les domaines du Développement d’applications web &amp; mobiles, du support et administration des Systèmes &amp; Réseaux et de la transformation numérique des entreprises.
- 
-Nos formations « métiers » vous permettront de certifier vos compétences, acquérir de l’expérience, obtenir un titre professionnel niveaux IV (niv. Bac), III (niv. Bac+2) et II (niv. Bac+3) et surtout…DEVENIR UN PROFESSIONNEL ACTIF DU SECTEUR NUMÉRIQUE ET INFORMATIQUE EN OCCITANIE… et au-delà.
-
-Contactez un conseiller, il vous accompagnera dans la concrétisation de votre projet de formation et votre projet professionnel.
-
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Une équipe pédagogique à votre disposition">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica-Bold"/>
-                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Le Pôle numérique s’appuie sur une équipe d’une vingtaine de formateurs experts dans leur domaine. Ils possèdent tous une expérience de plus de 5 ans dans le métier et sont formés à la pédagogie pour adultes.
-
-Chaque dispositif est suivi par un formateur référent : il est le garant technique et gère au quotidien la formation.
-
-La coordinatrice de la filière prend en charge l’adaptation de votre parcours de formation, la mise en place de son individualisation, ainsi que la coordination des groupes et votre suivi individuel tout au long du parcours.
-
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Les locaux à votre disposition">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica-Bold"/>
-                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Nous dispensons nos formations dans plus de 4000m² de locaux et sommes en capacité d’intervenir sur l’ensemble de la Région Occitanie.</string>
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <font key="NSOriginalFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
-                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OLY-mi-ZxZ">
                                 <rect key="frame" x="0.0" y="88" width="414" height="10"/>
                                 <color key="backgroundColor" red="0.2784313725" green="0.76470588240000004" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,17 +26,25 @@ Nous dispensons nos formations dans plus de 4000m² de locaux et sommes en capac
                                     <constraint firstAttribute="height" constant="10" id="vyH-fv-svf"/>
                                 </constraints>
                             </imageView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lba-pw-44b">
+                                <rect key="frame" x="0.0" y="98" width="414" height="798"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="KcZ-yP-lbw" firstAttribute="bottom" secondItem="BmK-YT-3GW" secondAttribute="bottom" constant="8" id="3dA-WK-6zP"/>
-                            <constraint firstItem="BmK-YT-3GW" firstAttribute="top" secondItem="OLY-mi-ZxZ" secondAttribute="bottom" constant="8" id="B7L-bX-MDF"/>
+                            <constraint firstAttribute="bottom" secondItem="Lba-pw-44b" secondAttribute="bottom" id="F4P-Rq-VxM"/>
+                            <constraint firstItem="Lba-pw-44b" firstAttribute="top" secondItem="OLY-mi-ZxZ" secondAttribute="bottom" id="Fbm-Oe-je1"/>
                             <constraint firstItem="KcZ-yP-lbw" firstAttribute="trailing" secondItem="OLY-mi-ZxZ" secondAttribute="trailing" id="JFp-y5-nxC"/>
                             <constraint firstItem="OLY-mi-ZxZ" firstAttribute="top" secondItem="KcZ-yP-lbw" secondAttribute="top" id="KHC-2O-iuE"/>
-                            <constraint firstItem="KcZ-yP-lbw" firstAttribute="trailing" secondItem="BmK-YT-3GW" secondAttribute="trailing" constant="8" id="ecH-2l-uWj"/>
                             <constraint firstItem="OLY-mi-ZxZ" firstAttribute="leading" secondItem="KcZ-yP-lbw" secondAttribute="leading" id="nne-It-7Cu"/>
-                            <constraint firstItem="BmK-YT-3GW" firstAttribute="leading" secondItem="KcZ-yP-lbw" secondAttribute="leading" constant="8" id="vgR-nV-5cW"/>
+                            <constraint firstItem="Lba-pw-44b" firstAttribute="trailing" secondItem="KcZ-yP-lbw" secondAttribute="trailing" id="xJZ-aT-TSs"/>
+                            <constraint firstItem="Lba-pw-44b" firstAttribute="leading" secondItem="KcZ-yP-lbw" secondAttribute="leading" id="ynr-EF-9j8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KcZ-yP-lbw"/>
                     </view>
@@ -109,7 +58,7 @@ Nous dispensons nos formations dans plus de 4000m² de locaux et sommes en capac
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="AdrarPresentation" destination="BmK-YT-3GW" id="COY-sn-erK"/>
+                        <outlet property="infoAdrarWV" destination="Lba-pw-44b" id="Wo9-KW-5eh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pO4-0j-4xV" userLabel="First Responder" sceneMemberID="firstResponder"/>

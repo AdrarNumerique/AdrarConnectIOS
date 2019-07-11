@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//Gestion d'envoie des documents.
 class DocumentsViewController: UIViewController {
     
     
@@ -24,14 +24,11 @@ class DocumentsViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+    @IBAction func validerEtRetour(_ sender: Any) {
+        //valider
+        self.navigationController?.popToRootViewController(animated: true)
+        
     }
-    */
-
+    
 }

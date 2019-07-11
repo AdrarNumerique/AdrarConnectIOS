@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct CentreFormation:Decodable{
-    private var _id:Int
-    private var _numeroVoie:String
-    private var _adresse:String
-    private var _complementAdresse:String
-    private var _cP: String
-    private var _ville:String
-    private var _telephone:String
-    private var _coordonnerX:Int
-    private var _coordonneeY:Int
+struct CentreFormation:Codable{
+    var id:Int
+    var numeroVoie:String
+    var adresse:String
+    var complementAdresse:String?
+    var cp: String
+    var ville:String
+    var telephone:String
+    var coordoneeX:String?
+    var coordoneeY:String?
 }

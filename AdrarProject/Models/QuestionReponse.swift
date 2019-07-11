@@ -9,7 +9,7 @@
 import Foundation
 
 
-class QuestionReponse :Decodable{
+class QuestionReponse :Codable{
     var id:Int
     var question:String
     var reponse:String

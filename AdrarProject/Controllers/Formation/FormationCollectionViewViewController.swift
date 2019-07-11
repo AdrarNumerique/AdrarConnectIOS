@@ -10,23 +10,40 @@ import UIKit
 
 class FormationCollectionViewViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    var formations : [FormationT] = []
     let segueID = "detailFormation"
-    var formations: [Formation] = []
     var cellId = "mainFormation"
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        formations = catchFormation()
         collectionView.delegate = self
         collectionView.dataSource = self
-        formations = FormationCollection().all()
-        // Do any additional setup after loading the view.
-      
+    }
+    //Récuperation d'un json qu'on transforme en tableau de formation.
+    func catchFormation() -> [FormationT] {
+        let formationsJsonAfterUD = UserDefaults.standard.string(forKey: "formations")
+        if let result: Data = formationsJsonAfterUD?.data(using: .utf8) {
+            do {
+                return try JSONDecoder().decode([FormationT].self, from: result)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return formations
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    //Nombre de cellule
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return formations.count
     }
-    
+    //Gestion de l'affichage des cellules dans la collectionView.
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let numberCellInRows = 2
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
@@ -34,32 +51,31 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
         let taille = Int((collectionView.bounds.width - espaceTotal)/CGFloat(numberCellInRows))
         return CGSize(width: taille, height: taille)
     }
-    
+    //Envoie de cellules.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let formation = formations[indexPath.row]
+       let formation = formations[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? FormationCollectionViewCell{
-            cell.formation = formation
+            cell.intituleFormation.text = formation.intitule
             return cell
         }
         return UICollectionViewCell()
     }
     
-    
-    
+    //Quand on clique sur une cellule on envoie les données de la formation en question.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          performSegue(withIdentifier: segueID ,sender: formations[indexPath.row])
     }
-    
+    //Préparation de page formationDetail
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueID, let vc = segue.destination as? FormationDetailController {
-            vc.formationReceived = sender as? Formation
+        if segue.identifier == segueID {
+            if let controller = segue.destination as? FormationDetailController {
+                controller.formationRecue = sender as? FormationT
+            }
         }
         let backItem = UIBarButtonItem()
         backItem.title = "Les Formations"
         backItem.tintColor = Jaune
         navigationItem.backBarButtonItem = backItem
-        
-        
     }
     
     @IBAction func backButton(_ sender: Any) {
