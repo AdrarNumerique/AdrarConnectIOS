@@ -30,13 +30,16 @@ class InformationsSuppViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         if let user = UserDefaults.standard.string(forKey: "utilisateur") {
             jsonToUser(user)
         }
     }
     
     //Transformation du json en données de type Utilisateur.
-    func jsonToUser(_ userString:String){
+    private func jsonToUser(_ userString:String){
         if let result: Data = userString.data(using: .utf8) {
             do {
                 userReceived = try JSONDecoder().decode(Utilisateur.self, from: result)
@@ -50,19 +53,38 @@ class InformationsSuppViewController: UIViewController {
     }
     
     //On affiche les données récuperer dans chaques textfield.
-    func injectInfo(_ user:Utilisateur){
+    private func injectInfo(_ user:Utilisateur){
         nomTF.text = user.nom
         prenomTF.text = user.prenom
         emailTF.text = user.email
         motDePasseTF.text = user.mdp
-        dateNaissanceTF.text = user.ddn ?? ""
-        numeroTelTF.text = user.telephone ?? ""
-        numeroPETF.text = user.numeroPe ?? ""
-        nomDeVoieTF.text = user.adresse ?? ""
-        numeroDeVoieTF.text = user.numeroVoie ?? ""
-        complementAdresseTF.text = user.complementAdresse ?? ""
-        villeTF.text = user.ville ?? ""
-        codePostalTF.text = user.cp ?? ""
+        if user.ddn != nil {
+            dateNaissanceTF.text = user.ddn
+        }
+        if user.telephone != nil {
+            numeroTelTF.text = user.telephone
+        }
+        if user.telephone != nil {
+            numeroTelTF.text = user.telephone
+        }
+        if user.numeroPe != nil {
+            numeroPETF.text = user.numeroPe
+        }
+        if user.numeroVoie != nil {
+            numeroDeVoieTF.text = user.numeroVoie
+        }
+        if user.adresse != nil {
+            nomDeVoieTF.text = user.adresse
+        }
+        if user.complementAdresse != nil {
+            complementAdresseTF.text = user.complementAdresse
+        }
+        if user.ville != nil {
+            villeTF.text = user.ville
+        }
+        if user.cp != nil {
+            codePostalTF.text = user.cp
+        }
         if user.dev == 1 {
             checkedDev = true
             devBtn.setImage(checkBoxRemplie, for: .normal)
@@ -91,7 +113,6 @@ class InformationsSuppViewController: UIViewController {
     }
     
     @IBAction func changeImageReseau(_ sender: UIButton) {
-        print("hi")
         if self.checkedRes == false {
             sender.setImage(checkBoxRemplie, for: .normal)
             self.checkedRes = true
@@ -101,10 +122,36 @@ class InformationsSuppViewController: UIViewController {
         }
     }
     
-    //Post les nouvelles informations.
-    @IBAction func ValiderInfoSupp(_ sender: Any) {
-        //envoyer les valeurs dans bd
-       self.navigationController?.popToRootViewController(animated: true)
+    private func updateUser(){
+        if userReceived != nil {
+            UtilisateurAPIHelper().update(utilisateur: userReceived!) { (bool, erreur) in
+                if erreur != nil {
+                    print(erreur!)
+                }
+                if bool != nil {
+                    print(bool!)
+                }
+            }
+        }
+        
     }
+    
+    private func updateUserReceived(){
+        var ddn:String? = nil
+        if let ddnUser = dateNaissanceTF.text, !ddnUser.isEmpty {
+            ddn = ddnUser
+        }
+        let newUser = Utilisateur(id: userReceived!.id, nom: nomTF.text!, prenom: prenomTF.text!, ddn: ddn, email: emailTF.text!, telephone: numeroTelTF.text ?? nil, numeroPe: numeroPETF.text ?? nil, mdp: motDePasseTF.text!, numeroVoie: numeroDeVoieTF.text ?? nil, adresse: nomDeVoieTF.text ?? nil, complementAdresse: complementAdresseTF.text ?? nil, cp: codePostalTF.text ?? nil, ville: villeTF.text ?? nil, dev: nil ?? 0, reseau: nil ?? 0, admin: nil ?? 0, idSessionConnexion: userReceived?.idSessionConnexion, ID_infoCollective: nil, ID_avancementInscription: nil)
+        userReceived = newUser
+    }
+    
+    //Post les nouvelles informations
+    @IBAction func ValiderInfoSupp(_ sender: Any) {
+        updateUserReceived()
+        updateUser()
+        //self.navigationController?.popToRootViewController(animated: true)
+    }
+    
+   
     
 }

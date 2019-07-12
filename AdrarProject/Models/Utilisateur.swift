@@ -16,15 +16,15 @@ struct Utilisateur:Codable{
     var email: String
     var telephone: String?
     var numeroPe: String?
-    var mdp: String?
+    var mdp: String
     var numeroVoie: String?
     var adresse: String?
     var complementAdresse: String?
     var cp: String?
     var ville: String?
-    var dev: Int
-    var reseau: Int
-    var admin: Int
+    var dev: Int?
+    var reseau: Int?
+    var admin: Int?
     var idSessionConnexion:String?
     var ID_infoCollective: Int?
     var ID_avancementInscription:Int?

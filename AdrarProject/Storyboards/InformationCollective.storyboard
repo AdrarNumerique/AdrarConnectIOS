@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6S-14-8cD">
-                                        <rect key="frame" x="0.0" y="728" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="698" width="414" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="97a-vC-scj"/>
                                         </constraints>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3s-Q1-Vn6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="728"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="698"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -46,7 +46,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="N3s-Q1-Vn6" firstAttribute="leading" secondItem="yvt-DV-S9M" secondAttribute="leading" id="AhK-lq-R4y"/>
-                                    <constraint firstAttribute="bottom" secondItem="a6S-14-8cD" secondAttribute="bottom" id="BfO-ek-CMV"/>
+                                    <constraint firstAttribute="bottom" secondItem="a6S-14-8cD" secondAttribute="bottom" constant="30" id="BfO-ek-CMV"/>
                                     <constraint firstItem="a6S-14-8cD" firstAttribute="top" secondItem="N3s-Q1-Vn6" secondAttribute="bottom" id="Fm8-q8-tyW"/>
                                     <constraint firstAttribute="trailing" secondItem="a6S-14-8cD" secondAttribute="trailing" id="JFJ-BX-ICc"/>
                                     <constraint firstItem="a6S-14-8cD" firstAttribute="leading" secondItem="yvt-DV-S9M" secondAttribute="leading" id="OIF-eu-65E"/>

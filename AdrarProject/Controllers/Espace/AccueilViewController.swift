@@ -25,14 +25,13 @@ class AccueilViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         changeTextAndProgressView()
     }
     //En fonction de l'avancement inscription on change la progressBar et le texte.
-    func changeTextAndProgressView(){
+    private func changeTextAndProgressView(){
         switch  userReceived?.ID_avancementInscription{
         case 1:
             descTextProgression.text = etapeInfoPerso

@@ -21,7 +21,7 @@ class AdrarController: UIViewController {
         if loadingIV != nil {
             view.addSubview(loadingIV!)
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0) { //Changement du timer de l'image d'attente.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { //Changement du timer de l'image d'attente.
             if let infoAdrarRecu = UserDefaults.standard.string(forKey: "adrar_html") {
                 self.infoAdrarWV.loadHTMLString(infoAdrarRecu, baseURL: nil)
             }

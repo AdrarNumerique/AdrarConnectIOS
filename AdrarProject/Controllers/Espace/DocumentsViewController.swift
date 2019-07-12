@@ -11,7 +11,7 @@ import UIKit
 class DocumentsViewController: UIViewController {
     
     
-    var imagePicker = UIImagePickerController()
+    private var imagePicker = UIImagePickerController()
     
     
     override func viewDidLoad() {

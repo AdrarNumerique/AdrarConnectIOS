@@ -14,7 +14,7 @@ class FormationDetailController: UIViewController {
         @IBOutlet weak var titleLbl: UILabel!
         @IBOutlet weak var descriptionWebView: WKWebView!
     
-        var loadingIV: LoadingView?
+        private var loadingIV: LoadingView?
         var formationRecue: FormationT?
     
         //Cycle de vie du controller. Loadview en premier (fait automatiquement avec storyboards). viewdidload qui charge en mémoire la vue mais qui ne l'affiche pas

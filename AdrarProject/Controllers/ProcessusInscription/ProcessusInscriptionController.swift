@@ -20,8 +20,8 @@ class ProcessusInscriptionController: UIViewController {
     @IBOutlet weak var telephoneTV: UITextView!
     @IBOutlet weak var mailTV: UITextView!
     
-    var textSituationSalarie: String! = "page html vide "
-    var textSituationDemandeur: String! = "page html vide "
+    private var textSituationSalarie: String! = "page html vide "
+    private var textSituationDemandeur: String! = "page html vide "
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class ProcessusInscriptionController: UIViewController {
     }
     
     //Function qui va aller récuperer la data dans l'objet USERDEFAULT pour récuperer les données récupérées ou non et les afficher dans la webview sous format html.
-    func catchHtml(){
+    private func catchHtml(){
         if UserDefaults.standard.string(forKey: "salarie_html") != nil && (UserDefaults.standard.string(forKey: "demandeurEmploi_html") != nil) {
             self.textSituationSalarie = UserDefaults.standard.string(forKey:"salarie_html")
             self.textSituationDemandeur = UserDefaults.standard.string(forKey:"demandeurEmploi_html")

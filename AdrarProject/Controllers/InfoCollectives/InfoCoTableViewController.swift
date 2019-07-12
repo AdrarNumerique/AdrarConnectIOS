@@ -21,7 +21,7 @@ class InfoCoTableViewController: UITableViewController {
         
     }
     //Recuperation des données présente dans le cache pour avoir les infocollectives
-    func catchInfoCo() -> [InformationCollective] {
+    private func catchInfoCo() -> [InformationCollective] {
         //récuperation
         let faqJsonAfterUD = UserDefaults.standard.string(forKey: "infosCos")
         //modification des données sous formes de bytes.

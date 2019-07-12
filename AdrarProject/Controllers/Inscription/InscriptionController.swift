@@ -36,8 +36,9 @@ class InscriptionController: UIViewController {
     
     //Regex utilisé pour Mot de passe
     func isValidPassword(_ password: String) -> Bool {
-        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
-        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+        //let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
+        //return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+        return true
     }
     //Regex utilisé pour email
     func isValidEmail(testStr:String) -> Bool {
@@ -58,8 +59,24 @@ class InscriptionController: UIViewController {
                 if let email = emailTf.text, isValidEmail(testStr: email){
                     if let mdp = mdpTf.text, isValidPassword(mdp){
                         if mdp == confirmMdpTf.text {
-                            //post
-                            dismiss(animated: true, completion: nil)
+                            let utilisateur:Utilisateur = Utilisateur(id: nil, nom: nom, prenom: prenom, ddn: nil, email: email, telephone: nil, numeroPe: nil, mdp: mdp, numeroVoie: nil, adresse: nil, complementAdresse: nil, cp: nil, ville: nil, dev: nil, reseau: nil, admin: nil, idSessionConnexion: nil, ID_infoCollective: nil, ID_avancementInscription: nil)
+                            UtilisateurAPIHelper().signIn(utilisateur: utilisateur) { (utilisateurCompletion, erreur) in
+                                if utilisateurCompletion != nil {
+                                    
+                                    let utilisateurBytes = try! JSONEncoder().encode(utilisateurCompletion)
+                                    
+                                    let utilisateurJSON = String(decoding: utilisateurBytes, as: UTF8.self)
+                                    print(utilisateurJSON)
+                                    UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
+                                    //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
+                                    DispatchQueue.main.async {
+                                        self.dismiss(animated: true, completion: nil)
+                                    }
+                                }
+                                if erreur != nil {
+                                    print(erreur!)
+                                }
+                            }
                         } else {
                             returnError("Les deux mots de passes sont différents")
                         }

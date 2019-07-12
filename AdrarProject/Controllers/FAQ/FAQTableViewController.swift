@@ -21,7 +21,7 @@ class FAQTableViewController: UITableViewController {
         
     }
     //récuperation des données et transformation en tableau de questionReponse
-    func catchFaq() -> [QuestionReponse] {
+    private func catchFaq() -> [QuestionReponse] {
         let faqJsonAfterUD = UserDefaults.standard.string(forKey: "faq")
         
         if let result: Data = faqJsonAfterUD?.data(using: .utf8) {

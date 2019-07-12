@@ -11,8 +11,8 @@ import UIKit
 class FormationCollectionViewViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var formations : [FormationT] = []
-    let segueID = "detailFormation"
-    var cellId = "mainFormation"
+    private let segueID = "detailFormation"
+    private var cellId = "mainFormation"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -23,10 +23,11 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
         collectionView.dataSource = self
     }
     //Récuperation d'un json qu'on transforme en tableau de formation.
-    func catchFormation() -> [FormationT] {
+    private func catchFormation() -> [FormationT] {
         let formationsJsonAfterUD = UserDefaults.standard.string(forKey: "formations")
         if let result: Data = formationsJsonAfterUD?.data(using: .utf8) {
             do {
+                print(result)
                 return try JSONDecoder().decode([FormationT].self, from: result)
             } catch {
                 print(error.localizedDescription)

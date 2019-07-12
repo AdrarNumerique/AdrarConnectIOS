@@ -27,7 +27,7 @@ class AuthentificationControllerViewController: UIViewController {
 //            }
 //        }
     }
-    func getUserAfterAuth(){
+    private func getUserAfterAuth(){
         //Si email et motdepasse n'est pas vide alors on lance de maniere asynchrone la méthode auth dans la classe UtilisateurAPIHelper
         if emailTf.text != "" , motDePasseTf.text != "" {
             DispatchQueue.main.async {
@@ -40,7 +40,6 @@ class AuthentificationControllerViewController: UIViewController {
                         //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
                         DispatchQueue.main.async {
                             self.authNonPossibleLbl.isHidden = true
-                            self.authNonPossibleLbl.text = "Utilisateur Inconnu"
                             self.dismiss(animated: true, completion: nil)
                         }
                     }
@@ -61,7 +60,7 @@ class AuthentificationControllerViewController: UIViewController {
         }
     }
     
-    func changeLblError(_ erreur:String){
+    private func changeLblError(_ erreur:String){
         authNonPossibleLbl.text = erreur
         
     }

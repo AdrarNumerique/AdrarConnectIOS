@@ -9,8 +9,8 @@
 import UIKit
 class MenuController: UIViewController {
     
-    let stringError: String = "Pas d'html disponible"
-    var userConnected:Bool = false
+    private let stringError: String = "Pas d'html disponible"
+    private var userConnected:Bool = false
     
     @IBOutlet weak var SeDecButton: UIButton!
     @IBOutlet weak var FAQButton: UIButton!
@@ -35,7 +35,7 @@ class MenuController: UIViewController {
         userReceived()
     }
     //au lancement de l'application et au chargement du storyboard on va Get pour récuperer les formations, les infoco, les questions/Reponses et les json/html pour l'adrar l'infoCo et processusInscription. Gestion des données, si string stockage direct sinon transformation en json pour pouvoir stocker dans userDefault(qui ne permet pas de stocker des Custom Class directement)
-    func getAccueil(){
+    private func getAccueil(){
         AccueilAPIHelper().getAccueil("http://localhost:3000/ws/accueil") { (listeFormation, adrarHtml, infoCoHtml, processusInscription, listeInfoCo, listeFAQ, erreur) in
 
             if listeFormation != nil {
@@ -86,8 +86,8 @@ class MenuController: UIViewController {
     }
 
     //Vérification dans le cache si un utilisateur existe ou non
-    func userReceived(){
-        if UserDefaults.standard.string(forKey: "utilisateur") != nil{
+    private func userReceived(){
+        if UserDefaults.standard.string(forKey: "utilisateur") != nil {
                 updateSegueIfUserConnected()
         } else {
                 updateSegueIfUserNotConnected()
@@ -95,13 +95,13 @@ class MenuController: UIViewController {
     }
     
     //Changement du texte sur les bouton qui permettent d'acceder à de nouvelles pages en fonction de si l'utilisateur est connecté
-    func updateSegueIfUserConnected(){
+    private func updateSegueIfUserConnected(){
         userConnected = true
         SwitchButtonAuthOrEspace.setTitle("Mon Espace", for: .normal)
         SwitchInscriptionUtiOrInfoCo.setTitle("Information Collective", for: .normal)
     }
     //Changement du texte sur les bouton qui permettent d'acceder à de nouvelles pages en fonction de si l'utilisateur est connecté
-    func updateSegueIfUserNotConnected(){
+    private func updateSegueIfUserNotConnected(){
         userConnected = false
         SwitchButtonAuthOrEspace.setTitle("Se Connecter", for: .normal)
         SwitchInscriptionUtiOrInfoCo.setTitle("S'inscrire", for: .normal)
