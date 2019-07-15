@@ -11,7 +11,7 @@ import Foundation
 struct Accueil: Codable {
     var processusInscription: ProcessusInscription
     var listeInfosCollectives: [InformationCollective]
-    var formations:[FormationT]
+    var formations:[Formation]
     var adrar_html: String
     var faq: [QuestionReponse]
     var infosCollectives_html: String

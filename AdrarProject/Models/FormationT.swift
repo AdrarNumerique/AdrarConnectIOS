@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FormationT:Codable{
+struct Formation:Codable{
     var id: Int
     var intitule: String
     var urlPhoto: String

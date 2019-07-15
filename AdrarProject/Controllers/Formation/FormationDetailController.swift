@@ -15,7 +15,7 @@ class FormationDetailController: UIViewController {
         @IBOutlet weak var descriptionWebView: WKWebView!
     
         private var loadingIV: LoadingView?
-        var formationRecue: FormationT?
+        var formationRecue: Formation?
     
         //Cycle de vie du controller. Loadview en premier (fait automatiquement avec storyboards). viewdidload qui charge en mémoire la vue mais qui ne l'affiche pas
         override func viewDidLoad() {

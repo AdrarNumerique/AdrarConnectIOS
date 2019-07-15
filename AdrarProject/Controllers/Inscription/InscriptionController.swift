@@ -60,23 +60,26 @@ class InscriptionController: UIViewController {
                     if let mdp = mdpTf.text, isValidPassword(mdp){
                         if mdp == confirmMdpTf.text {
                             let utilisateur:Utilisateur = Utilisateur(id: nil, nom: nom, prenom: prenom, ddn: nil, email: email, telephone: nil, numeroPe: nil, mdp: mdp, numeroVoie: nil, adresse: nil, complementAdresse: nil, cp: nil, ville: nil, dev: nil, reseau: nil, admin: nil, idSessionConnexion: nil, ID_infoCollective: nil, ID_avancementInscription: nil)
-                            UtilisateurAPIHelper().signIn(utilisateur: utilisateur) { (utilisateurCompletion, erreur) in
-                                if utilisateurCompletion != nil {
-                                    
-                                    let utilisateurBytes = try! JSONEncoder().encode(utilisateurCompletion)
-                                    
-                                    let utilisateurJSON = String(decoding: utilisateurBytes, as: UTF8.self)
-                                    print(utilisateurJSON)
-                                    UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
-                                    //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
-                                    DispatchQueue.main.async {
-                                        self.dismiss(animated: true, completion: nil)
+                            DispatchQueue.main.async {
+                                UtilisateurAPIHelper().signIn(utilisateur: utilisateur) { (utilisateurCompletion, erreur) in
+                                    if utilisateurCompletion != nil {
+                                        
+                                        let utilisateurBytes = try! JSONEncoder().encode(utilisateurCompletion)
+                                        
+                                        let utilisateurJSON = String(decoding: utilisateurBytes, as: UTF8.self)
+                                        print(utilisateurJSON)
+                                        UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
+                                        //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
+                                        DispatchQueue.main.async {
+                                            self.dismiss(animated: true, completion: nil)
+                                        }
+                                    }
+                                    if erreur != nil {
+                                        print(erreur!)
                                     }
                                 }
-                                if erreur != nil {
-                                    print(erreur!)
-                                }
                             }
+                            
                         } else {
                             returnError("Les deux mots de passes sont différents")
                         }

@@ -11,7 +11,7 @@ import Foundation
 
 class UtilisateurAPIHelper {
     typealias ApiCompletionUser = (_ utilisateur:Utilisateur?,_ errorString:String?) -> Void//comprendre le typealias
-    typealias ApiCompletionUpdateBool = (_ updateGood:Bool?,_ errorString:String?) -> Void
+    typealias ApiCompletionUpdateBool = (_ updateGood:Utilisateur?,_ errorString:String?) -> Void
     
     //récuperer un email et un mdp pour le post et recuperer un utilisateur dans le get
     func auth(email: String,mdp: String,_ completion:ApiCompletionUser?){
@@ -49,24 +49,6 @@ class UtilisateurAPIHelper {
             
             }.resume()
     }
-//    {
-//    "prenom" : (string),
-//    "nom" : (string),
-//    "email" : (string),
-//    "mdp" : (string),
-//    "numeroVoie" : (number | null),
-//    "adresse" : (string | null),
-//    "complementAdresse" : (string | null),
-//    "cp" : (number | null),
-//    "ville" : (string | null),
-//    "ddn" : (number | null),
-//    "telephone" : (number | null),
-//    "numeroPe" : (string | null),
-//    "dev" : (boolean | null),
-//    "reseau" : (boolean | null),
-//    "admin" : (boolean),
-//    "idInfoCollective" : (string | null)
-//}
     func signIn(utilisateur:Utilisateur,_ completion:ApiCompletionUser?){
         let parameters:[String:Any] = ["prenom":"\(utilisateur.prenom)","nom":"\(utilisateur.nom)", "email":"\(utilisateur.email)","mdp":"\(utilisateur.mdp)"]
         let url = URL(string:"http://localhost:3000/ws/signin")!
@@ -142,8 +124,6 @@ class UtilisateurAPIHelper {
     }
     func update(utilisateur:Utilisateur,_ completion:ApiCompletionUpdateBool?){
         let userDico = createDictioUser(utilisateur: utilisateur)
-        print("hahah")
-        print(userDico)
         let url = URL(string:"http://localhost:3000/ws/candidat/update/details/")!
         var request = URLRequest(url:url)
         request.httpMethod = "POST"
@@ -164,7 +144,7 @@ class UtilisateurAPIHelper {
             }
             if data != nil,((response as? HTTPURLResponse) != nil) {
                 do{
-                    let reponse = try JSONDecoder().decode(Bool.self, from: data!)
+                    let reponse = try JSONDecoder().decode(Utilisateur.self, from: data!)
                     completion?(reponse.self, nil)
                 }catch{
                     completion?(nil,error.localizedDescription)

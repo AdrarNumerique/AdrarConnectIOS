@@ -16,7 +16,6 @@ class InformationsSuppViewController: UIViewController {
     @IBOutlet weak var nomTF: UITextField!
     @IBOutlet weak var prenomTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
-    @IBOutlet weak var motDePasseTF: UITextField!
     @IBOutlet weak var dateNaissanceTF: UITextField!
     @IBOutlet weak var numeroTelTF: UITextField!
     @IBOutlet weak var numeroPETF: UITextField!
@@ -30,6 +29,7 @@ class InformationsSuppViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTF.isUserInteractionEnabled = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -57,7 +57,6 @@ class InformationsSuppViewController: UIViewController {
         nomTF.text = user.nom
         prenomTF.text = user.prenom
         emailTF.text = user.email
-        motDePasseTF.text = user.mdp
         if user.ddn != nil {
             dateNaissanceTF.text = user.ddn
         }
@@ -124,14 +123,19 @@ class InformationsSuppViewController: UIViewController {
     
     private func updateUser(){
         if userReceived != nil {
-            UtilisateurAPIHelper().update(utilisateur: userReceived!) { (bool, erreur) in
-                if erreur != nil {
-                    print(erreur!)
-                }
-                if bool != nil {
-                    print(bool!)
+            DispatchQueue.main.async {
+                UtilisateurAPIHelper().update(utilisateur: self.userReceived!) { (utilisateur, erreur) in
+                    if erreur != nil {
+                        print(erreur!)
+                    }
+                    if utilisateur != nil {
+                        let utilisateurBytes = try! JSONEncoder().encode(utilisateur)
+                        let utilisateurJSON = String(decoding: utilisateurBytes, as: UTF8.self)
+                        UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
+                    }
                 }
             }
+            
         }
         
     }
@@ -141,7 +145,8 @@ class InformationsSuppViewController: UIViewController {
         if let ddnUser = dateNaissanceTF.text, !ddnUser.isEmpty {
             ddn = ddnUser
         }
-        let newUser = Utilisateur(id: userReceived!.id, nom: nomTF.text!, prenom: prenomTF.text!, ddn: ddn, email: emailTF.text!, telephone: numeroTelTF.text ?? nil, numeroPe: numeroPETF.text ?? nil, mdp: motDePasseTF.text!, numeroVoie: numeroDeVoieTF.text ?? nil, adresse: nomDeVoieTF.text ?? nil, complementAdresse: complementAdresseTF.text ?? nil, cp: codePostalTF.text ?? nil, ville: villeTF.text ?? nil, dev: nil ?? 0, reseau: nil ?? 0, admin: nil ?? 0, idSessionConnexion: userReceived?.idSessionConnexion, ID_infoCollective: nil, ID_avancementInscription: nil)
+        let newUser = Utilisateur(id: userReceived!.id, nom: nomTF.text!, prenom: prenomTF.text!, ddn: ddn, email: emailTF.text!, telephone: numeroTelTF.text ?? nil, numeroPe: numeroPETF.text ?? nil,mdp:"", numeroVoie: numeroDeVoieTF.text ?? nil, adresse: nomDeVoieTF.text ?? nil, complementAdresse: complementAdresseTF.text ?? nil, cp: codePostalTF.text ?? nil, ville: villeTF.text ?? nil, dev: nil ?? 0, reseau: nil ?? 0, admin: nil ?? 0, idSessionConnexion: userReceived?.idSessionConnexion, ID_infoCollective: nil, ID_avancementInscription: nil)
+        
         userReceived = newUser
     }
     
@@ -149,7 +154,7 @@ class InformationsSuppViewController: UIViewController {
     @IBAction func ValiderInfoSupp(_ sender: Any) {
         updateUserReceived()
         updateUser()
-        //self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
    

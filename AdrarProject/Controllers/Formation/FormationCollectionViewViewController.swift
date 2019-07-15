@@ -10,7 +10,7 @@ import UIKit
 
 class FormationCollectionViewViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var formations : [FormationT] = []
+    var formations : [Formation] = []
     private let segueID = "detailFormation"
     private var cellId = "mainFormation"
     
@@ -23,12 +23,12 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
         collectionView.dataSource = self
     }
     //Récuperation d'un json qu'on transforme en tableau de formation.
-    private func catchFormation() -> [FormationT] {
+    private func catchFormation() -> [Formation] {
         let formationsJsonAfterUD = UserDefaults.standard.string(forKey: "formations")
         if let result: Data = formationsJsonAfterUD?.data(using: .utf8) {
             do {
                 print(result)
-                return try JSONDecoder().decode([FormationT].self, from: result)
+                return try JSONDecoder().decode([Formation].self, from: result)
             } catch {
                 print(error.localizedDescription)
             }
@@ -70,7 +70,7 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueID {
             if let controller = segue.destination as? FormationDetailController {
-                controller.formationRecue = sender as? FormationT
+                controller.formationRecue = sender as? Formation
             }
         }
         let backItem = UIBarButtonItem()

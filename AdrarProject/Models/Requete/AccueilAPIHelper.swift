@@ -16,7 +16,7 @@ private let _urlBase = "localhost:3000/ws/" // à mettre dans les constantes dan
 
 class AccueilAPIHelper {
     
-    typealias ApiCompletionAccueil = (_ formations:[FormationT]?,_ adrarWebView: String?,_ infoCoWebView: String?,_ salarie:ProcessusInscription?,_ listInfoCo:[InformationCollective]?,_ listeFAQ:[QuestionReponse]? ,_ errorString:String?) -> Void//comprendre le typealias
+    typealias ApiCompletionAccueil = (_ formations:[Formation]?,_ adrarWebView: String?,_ infoCoWebView: String?,_ salarie:ProcessusInscription?,_ listInfoCo:[InformationCollective]?,_ listeFAQ:[QuestionReponse]? ,_ errorString:String?) -> Void//comprendre le typealias
     
     var urlAccueil : String {
         return _urlBase + "accueil" // récuper l'url ou se situe le json
