@@ -16,7 +16,7 @@ struct Utilisateur:Codable{
     var email: String
     var telephone: String?
     var numeroPe: String?
-    var mdp: String
+    var mdp: String?
     var numeroVoie: String?
     var adresse: String?
     var complementAdresse: String?

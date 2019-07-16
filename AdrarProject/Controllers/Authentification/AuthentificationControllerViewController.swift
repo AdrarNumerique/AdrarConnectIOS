@@ -37,6 +37,7 @@ class AuthentificationControllerViewController: UIViewController {
                         let utilisateurBytes = try! JSONEncoder().encode(utilisateur)
                         let utilisateurJSON = String(decoding: utilisateurBytes, as: UTF8.self)
                         UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
+                        UserDefaults.standard.set(utilisateur!.idSessionConnexion, forKey: "idSession")
                         //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
                         DispatchQueue.main.async {
                             self.authNonPossibleLbl.isHidden = true
@@ -66,6 +67,7 @@ class AuthentificationControllerViewController: UIViewController {
     }
     
     @IBAction func SeConnecter(_ sender: Any) {
+        UserDefaults.standard.set(motDePasseTf.text, forKey: "mdp")
         getUserAfterAuth()
     }
     

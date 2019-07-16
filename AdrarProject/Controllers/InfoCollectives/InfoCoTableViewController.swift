@@ -12,13 +12,13 @@ class InfoCoTableViewController: UITableViewController {
     var infoCollective: [InformationCollective] = []
     var cellId = "mainInfoCollective"
     let segueID = "detailInfoCo"
-    
+    var utilisateurReceived:Utilisateur?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         infoCollective = catchInfoCo()
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+        stockUser()
     }
     //Recuperation des données présente dans le cache pour avoir les infocollectives
     private func catchInfoCo() -> [InformationCollective] {
@@ -58,6 +58,9 @@ class InfoCoTableViewController: UITableViewController {
         let strDate = dateFormatter.string(from: date)
         cell.dateLbl.text = strDate
         cell.lieuLbl.text = "\(infoCo.centreDeFormation.ville)"
+        if utilisateurReceived != nil {
+            cell.userReservation = utilisateurReceived!.ID_infoCollective
+        }
         return cell
     }
 
@@ -73,11 +76,25 @@ class InfoCoTableViewController: UITableViewController {
         if segue.identifier == segueID {
             if let controller = segue.destination as? InfoCoDetailViewController{
                 controller.infoCoRecue = sender as? InformationCollective
+                if utilisateurReceived?.ID_infoCollective == controller.infoCoRecue?.id {
+                    controller.stateInfoCoUtilisateur = 2
+                } else if utilisateurReceived?.ID_infoCollective != nil {
+                    controller.stateInfoCoUtilisateur = 1
+                } else {
+                    controller.stateInfoCoUtilisateur = 0
+                }
             }
         }
         let backItem = UIBarButtonItem()
         backItem.title = "Liste Informations Collectives"
         navigationItem.backBarButtonItem = backItem
+    }
+    
+    private func stockUser(){
+        if let userStringify  = UserDefaults.standard.string(forKey: "utilisateur"){
+            let data = userStringify.data(using: .utf8)
+            utilisateurReceived = try! JSONDecoder().decode(Utilisateur.self, from: data!)
+        }
     }
 }
 

@@ -11,6 +11,7 @@ class MenuController: UIViewController {
     
     private let stringError: String = "Pas d'html disponible"
     private var userConnected:Bool = false
+    private var utilisateur:Utilisateur?
     
     @IBOutlet weak var SeDecButton: UIButton!
     @IBOutlet weak var FAQButton: UIButton!
@@ -33,6 +34,9 @@ class MenuController: UIViewController {
         FAQButton.isHidden = true
         SeDecButton.isHidden = true
         userReceived()
+    }
+    private func stockUser(){
+        
     }
     //au lancement de l'application et au chargement du storyboard on va Get pour récuperer les formations, les infoco, les questions/Reponses et les json/html pour l'adrar l'infoCo et processusInscription. Gestion des données, si string stockage direct sinon transformation en json pour pouvoir stocker dans userDefault(qui ne permet pas de stocker des Custom Class directement)
     private func getAccueil(){
@@ -99,6 +103,7 @@ class MenuController: UIViewController {
         userConnected = true
         SwitchButtonAuthOrEspace.setTitle("Mon Espace", for: .normal)
         SwitchInscriptionUtiOrInfoCo.setTitle("Information Collective", for: .normal)
+        
     }
     //Changement du texte sur les bouton qui permettent d'acceder à de nouvelles pages en fonction de si l'utilisateur est connecté
     private func updateSegueIfUserNotConnected(){
@@ -109,6 +114,8 @@ class MenuController: UIViewController {
     //Si l'utilisateur appuie sur "Se déconnecter" présent dans la bar de navigation alors on supprime les données de l"utilisateur du cache.
     @IBAction func deconnectUser(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "utilisateur")
+        UserDefaults.standard.removeObject(forKey: "mdp")
+        UserDefaults.standard.removeObject(forKey: "idSession")
         userReceived()
         SeDecButton.isHidden = true
     }
@@ -116,16 +123,17 @@ class MenuController: UIViewController {
     //Sur bouton on modifie la direction sur laquelle on va en fonction de si l'utilisateur est connecté ou non
     @IBAction func toSignOrInfoCo(_ sender: Any) {
         if userConnected {
+            //send id infoCo si il en a une !
             let storyboard = UIStoryboard(name: "InformationCollective", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "infoCo")
             self.present(controller, animated: true, completion: nil)
+            
         } else {
             let storyboard = UIStoryboard(name: "Inscription", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "Inscription")
             self.present(controller, animated: true, completion: nil)
         }
     }
-    
     //Sur bouton on modifie la direction sur laquelle on va en fonction de si l'utilisateur est connecté ou non
     @IBAction func toConnectOrEspace(_ sender: Any) {
         if userConnected {
@@ -153,11 +161,4 @@ class MenuController: UIViewController {
     }
     
 }
-//????
-//extension UITextView {
-//    override open func draw(_ rect: CGRect){
-//        super.draw(rect)
-//        setContentOffset(CGPoint.zero,animated: false)
-//    }
-//}
 

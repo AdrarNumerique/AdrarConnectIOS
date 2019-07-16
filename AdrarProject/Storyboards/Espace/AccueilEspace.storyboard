@@ -469,25 +469,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tt5-Oz-sv4">
                                                 <rect key="frame" x="10" y="469.66666666666663" width="394" height="200"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kDi-PR-ga9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="36"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV1-DA-ODh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="36"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Iu-fU-fFv">
-                                                                <rect key="frame" x="66.333333333333343" y="0.0" width="327.66666666666663" height="36"/>
-                                                                <nil key="textColor"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="location"/>
-                                                            </textField>
-                                                        </subviews>
-                                                    </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hG9-sS-wxQ">
-                                                        <rect key="frame" x="0.0" y="41" width="394" height="36"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="36"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numéro de Voie : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veN-GL-5tD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="135.66666666666666" height="36"/>
@@ -500,6 +483,23 @@
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kDi-PR-ga9">
+                                                        <rect key="frame" x="0.0" y="41" width="394" height="36"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Route : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GV1-DA-ODh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="58.333333333333336" height="36"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Iu-fU-fFv">
+                                                                <rect key="frame" x="66.333333333333343" y="0.0" width="327.66666666666663" height="36"/>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="location"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -586,7 +586,7 @@
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <state key="normal" image="checkBoxVide"/>
                                                                         <connections>
-                                                                            <action selector="changeImage:" destination="4rB-xI-Tru" eventType="touchUpInside" id="qcG-ZA-HVF"/>
+                                                                            <action selector="changeImageDev:" destination="4rB-xI-Tru" eventType="touchUpInside" id="Qp1-fA-SjA"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -677,7 +677,7 @@
                         <outlet property="codePostalTF" destination="6zz-8e-kz0" id="Ze5-Dj-esA"/>
                         <outlet property="complementAdresseTF" destination="dGT-k7-iOW" id="MFF-1C-dof"/>
                         <outlet property="dateNaissanceTF" destination="Rme-tf-tuo" id="B9n-qh-VOD"/>
-                        <outlet property="devBtn" destination="o3F-eS-6Tj" id="F6L-ZL-jpf"/>
+                        <outlet property="devBtn" destination="o3F-eS-6Tj" id="qEd-wS-dT0"/>
                         <outlet property="emailTF" destination="hdf-ZF-kSg" id="Pf7-A1-CRN"/>
                         <outlet property="nomDeVoieTF" destination="4Iu-fU-fFv" id="g3s-6G-WpA"/>
                         <outlet property="nomTF" destination="tPm-LY-FBe" id="WoO-gE-Jab"/>

@@ -10,9 +10,7 @@ import UIKit
 //Gestion d'envoie des documents.
 class DocumentsViewController: UIViewController {
     
-    
     private var imagePicker = UIImagePickerController()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

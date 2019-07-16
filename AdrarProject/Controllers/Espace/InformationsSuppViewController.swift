@@ -30,10 +30,12 @@ class InformationsSuppViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTF.isUserInteractionEnabled = false
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let user = UserDefaults.standard.string(forKey: "utilisateur") {
+            print("testuser \(user)")
             jsonToUser(user)
         }
     }
@@ -43,10 +45,12 @@ class InformationsSuppViewController: UIViewController {
         if let result: Data = userString.data(using: .utf8) {
             do {
                 userReceived = try JSONDecoder().decode(Utilisateur.self, from: result)
+                print("2")
                 if userReceived != nil {
                     injectInfo(userReceived!)
                 }
             } catch {
+                print("whut")
                 print(error.localizedDescription)
             }
         }
@@ -59,9 +63,6 @@ class InformationsSuppViewController: UIViewController {
         emailTF.text = user.email
         if user.ddn != nil {
             dateNaissanceTF.text = user.ddn
-        }
-        if user.telephone != nil {
-            numeroTelTF.text = user.telephone
         }
         if user.telephone != nil {
             numeroTelTF.text = user.telephone
@@ -95,6 +96,7 @@ class InformationsSuppViewController: UIViewController {
             checkedRes = true
             resBtn.setImage(checkBoxRemplie, for: .normal)
         } else {
+            checkedRes = false
             resBtn.setImage(checkBoxVide, for: .normal)
         }
     }
@@ -141,12 +143,49 @@ class InformationsSuppViewController: UIViewController {
     }
     
     private func updateUserReceived(){
+        //utilise ?
+        let mdp = UserDefaults.standard.string(forKey: "mdp")
         var ddn:String? = nil
-        if let ddnUser = dateNaissanceTF.text, !ddnUser.isEmpty {
+        if let ddnUser = dateNaissanceTF.text, !ddnUser.isEmpty{
             ddn = ddnUser
         }
-        let newUser = Utilisateur(id: userReceived!.id, nom: nomTF.text!, prenom: prenomTF.text!, ddn: ddn, email: emailTF.text!, telephone: numeroTelTF.text ?? nil, numeroPe: numeroPETF.text ?? nil,mdp:"", numeroVoie: numeroDeVoieTF.text ?? nil, adresse: nomDeVoieTF.text ?? nil, complementAdresse: complementAdresseTF.text ?? nil, cp: codePostalTF.text ?? nil, ville: villeTF.text ?? nil, dev: nil ?? 0, reseau: nil ?? 0, admin: nil ?? 0, idSessionConnexion: userReceived?.idSessionConnexion, ID_infoCollective: nil, ID_avancementInscription: nil)
-        
+        var tel:String? = nil
+        if let telUser = numeroTelTF.text, !telUser.isEmpty{
+            tel = telUser
+        }
+        var numVoie:String? = nil
+        if let numVoieUser = numeroDeVoieTF.text, !numVoieUser.isEmpty{
+            numVoie = numVoieUser
+        }
+        var numPE:String? = nil
+        if let numPEUser = numeroPETF.text, !numPEUser.isEmpty{
+            numPE = numPEUser
+        }
+        var adresse:String? = nil
+        if let adresseUser = nomDeVoieTF.text, !adresseUser.isEmpty{
+            adresse = adresseUser
+        }
+        var complAdresse:String? = nil
+        if let complAdresseUser = complementAdresseTF.text, !complAdresseUser.isEmpty{
+            complAdresse = complAdresseUser
+        }
+        var cp:String? = nil
+        if let cpUser = codePostalTF.text, !cpUser.isEmpty{
+            cp = cpUser
+        }
+        var ville:String? = nil
+        if let villeUser = villeTF.text, !villeUser.isEmpty{
+            ville = villeUser
+        }
+        var dev:Int = 0
+        if checkedDev == true {
+            dev = 1
+        }
+        var res:Int = 0
+        if checkedRes == true {
+            res = 1
+        }
+        let newUser = Utilisateur(id: userReceived!.id, nom: nomTF.text!, prenom: prenomTF.text!, ddn: ddn, email: emailTF.text!, telephone: tel, numeroPe: numPE ,mdp:mdp ?? "", numeroVoie: numVoie, adresse: adresse, complementAdresse: complAdresse, cp: cp, ville: ville, dev: dev, reseau:res, admin: nil, idSessionConnexion: userReceived?.idSessionConnexion, ID_infoCollective: userReceived?.ID_infoCollective, ID_avancementInscription: userReceived?.ID_avancementInscription)
         userReceived = newUser
     }
     

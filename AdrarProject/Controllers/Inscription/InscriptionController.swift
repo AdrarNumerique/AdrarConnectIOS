@@ -68,6 +68,8 @@ class InscriptionController: UIViewController {
                                         
                                         let utilisateurJSON = String(decoding: utilisateurBytes, as: UTF8.self)
                                         print(utilisateurJSON)
+                                        UserDefaults.standard.set(utilisateurCompletion!.idSessionConnexion, forKey: "idSession")
+                                        UserDefaults.standard.set(self.mdpTf.text, forKey: "mdp")
                                         UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
                                         //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
                                         DispatchQueue.main.async {

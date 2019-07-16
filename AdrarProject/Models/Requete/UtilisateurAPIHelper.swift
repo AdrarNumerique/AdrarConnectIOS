@@ -25,7 +25,7 @@ class UtilisateurAPIHelper {
         } catch let error {
             print(error.localizedDescription)
         }
-        //precise le type et format de donnée qu'on récupere avec le POST
+        //precise le type et format de donnée qu'on envoie avec le POST
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -50,7 +50,7 @@ class UtilisateurAPIHelper {
             }.resume()
     }
     func signIn(utilisateur:Utilisateur,_ completion:ApiCompletionUser?){
-        let parameters:[String:Any] = ["prenom":"\(utilisateur.prenom)","nom":"\(utilisateur.nom)", "email":"\(utilisateur.email)","mdp":"\(utilisateur.mdp)"]
+        let parameters:[String:Any] = ["prenom":"\(utilisateur.prenom)","nom":"\(utilisateur.nom)", "email":"\(utilisateur.email)","mdp":"\(utilisateur.mdp!)"]
         let url = URL(string:"http://localhost:3000/ws/signin")!
         var request = URLRequest(url:url)
         request.httpMethod = "POST"
@@ -59,7 +59,7 @@ class UtilisateurAPIHelper {
         } catch let error {
             print(error.localizedDescription)
         }
-        //precise le type et format de donnée qu'on récupere avec le POST
+        //precise le type et format de donnée qu'on envoie avec le POST
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
@@ -85,7 +85,7 @@ class UtilisateurAPIHelper {
     
     func createDictioUser(utilisateur:Utilisateur) -> [String:Any]{
         //Creer le tableau avec non optionelles et pour chaque valeur on unwrap et on rajoute si non nul
-        var parametersUpdate:[String:Any] = ["prenom":"\(utilisateur.prenom)","nom":"\(utilisateur.nom)", "email":"\(utilisateur.email)"]
+        var parametersUpdate:[String:Any] = ["prenom":"\(utilisateur.prenom)","nom":"\(utilisateur.nom)", "email":"\(utilisateur.email)","idSessionConnexion":"\(utilisateur.idSessionConnexion!)"]
         
         if let numeroVoieUser = utilisateur.numeroVoie {
             parametersUpdate["numeroVoie"] = numeroVoieUser
@@ -120,7 +120,9 @@ class UtilisateurAPIHelper {
         if let adminUser = utilisateur.admin {
             parametersUpdate["admin"] = adminUser
         }
+        print(parametersUpdate)
         return parametersUpdate
+        
     }
     func update(utilisateur:Utilisateur,_ completion:ApiCompletionUpdateBool?){
         let userDico = createDictioUser(utilisateur: utilisateur)
@@ -129,12 +131,51 @@ class UtilisateurAPIHelper {
         request.httpMethod = "POST"
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: userDico, options: .prettyPrinted)
-            print("good")
+            print(userDico)
+        } catch let error {
+            print("erreur catch")
+            print(error.localizedDescription)
+        }
+        //precise le type et format de donnée qu'on envoie avec le POST
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //GET
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+            if error != nil {
+                completion?(nil,error!.localizedDescription)
+            }
+            if data != nil,((response as? HTTPURLResponse) != nil) {
+                do{
+                    print("do")
+                    let reponse = try JSONDecoder().decode(Utilisateur.self, from: data!)
+                    print(reponse)
+                    completion?(reponse.self, nil)
+                }catch{
+                    print("catch")
+                    completion?(nil,error.localizedDescription)
+                    print(error)
+                }
+            } else {
+                completion?(nil,"aucune data disponible")
+            }
+
+            }.resume()
+    }
+    func updateInfoCo(idInfoCo:Int,idSessionCo:String,_ completion:ApiCompletionUser?){
+        let infoCoJson:[String:Any] = ["idSessionConnexion":idSessionCo,"ID_infoCollective":idInfoCo]
+        print(infoCoJson)
+        let url = URL(string:"http://localhost:3000/ws/infos-collectives/inscription")!
+        var request = URLRequest(url:url)
+        request.httpMethod = "POST"
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: infoCoJson, options: .prettyPrinted)
+            print(infoCoJson)
         } catch let error {
             print(error.localizedDescription)
         }
-        //precise le type et format de donnée qu'on récupere avec le POST
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //precise le type et format de donnée qu'on envoie avec le POST
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
         //GET
@@ -153,7 +194,47 @@ class UtilisateurAPIHelper {
             } else {
                 completion?(nil,"aucune data disponible")
             }
-
+            
+            }.resume()
+    }
+    //Not good
+    func deleteInfoCo(idSessionCo:String,_ completion:ApiCompletionUser?){
+        let infoCoJson:[String:String] = ["idSessionConnexion":idSessionCo]
+        print(infoCoJson)
+        let url = URL(string:"http://localhost:3000/ws/infos-collectives/delete")!
+        var request = URLRequest(url:url)
+        request.httpMethod = "GET"
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: infoCoJson, options: .prettyPrinted)
+            print("good")
+            print(infoCoJson)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        //precise le type et format de donnée qu'on envoie avec le POST
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        //GET
+        URLSession.shared.dataTask(with: request){(data,response,error) in
+            if error != nil {
+                completion?(nil,error!.localizedDescription)
+            }
+            if data != nil,((response as? HTTPURLResponse) != nil) {
+                do{
+                    print("do")
+                    let reponse = try JSONDecoder().decode(Utilisateur.self, from: data!)
+                    print(reponse)
+                    completion?(reponse.self, nil)
+                }catch{
+                    print("catch")
+                    completion?(nil,error.localizedDescription)
+                    print(error)
+                }
+            } else {
+                completion?(nil,"aucune data disponible")
+            }
+            
             }.resume()
     }
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 struct InformationCollective:Codable {
+    var id:Int
     var date:Int
     var nbreMaxParticipant:Int
     var complet: Int
