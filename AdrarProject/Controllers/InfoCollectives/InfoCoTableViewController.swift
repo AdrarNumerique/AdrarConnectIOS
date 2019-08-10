@@ -90,10 +90,11 @@ class InfoCoTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = backItem
     }
     
-    private func stockUser(){
-        if let userStringify  = UserDefaults.standard.string(forKey: "utilisateur"){
-            let data = userStringify.data(using: .utf8)
-            utilisateurReceived = try! JSONDecoder().decode(Utilisateur.self, from: data!)
+    
+    func stockUser(){
+        if UserDefaults.standard.string(forKey: "utilisateur") != nil {
+            //let data = userStringify.data(using: .utf8) /try! JSONDecoder().decode(Utilisateur.self, from: data!)
+            utilisateurReceived = UtilisateurAPIHelper().getUserDefautForKeyUtilisateur()
         }
     }
 }

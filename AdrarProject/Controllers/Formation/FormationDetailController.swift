@@ -40,7 +40,7 @@ class FormationDetailController: UIViewController {
             titleLbl.backgroundColor = Jaune
         }
 }
-
+//Extension faites pour la l'icone de chargement (Adrar)
 extension FormationDetailController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadingIV?.stop()

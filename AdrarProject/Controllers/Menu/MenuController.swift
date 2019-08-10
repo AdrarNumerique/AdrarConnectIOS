@@ -12,16 +12,20 @@ class MenuController: UIViewController {
     private let stringError: String = "Pas d'html disponible"
     private var userConnected:Bool = false
     private var utilisateur:Utilisateur?
+    private var menuOn:Bool = false
     
+    @IBOutlet weak var MenuDeroulant: UIView!
     @IBOutlet weak var SeDecButton: UIButton!
     @IBOutlet weak var FAQButton: UIButton!
     @IBOutlet weak var SwitchButtonAuthOrEspace: UIButton!
     @IBOutlet weak var SwitchInscriptionUtiOrInfoCo: RoundButton!
+    @IBOutlet weak var MenuTrailling: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Mise en place de la barre de navigation , pour avoir un logo.
-        let imageView = UIImageView(frame: CGRect(x:0, y: 0, width: 50, height: 50))
+        //Mise en place de la barre de navigation , povur avoir un logo.
+        let imageView = UIImageView(frame: CGRect(x:0, y: 0, width: 100, height: 0))
         imageView.contentMode = .scaleAspectFit
         let image = UIImage(named: "LOGO ADRAR CONNECT")
         imageView.image = image
@@ -31,17 +35,11 @@ class MenuController: UIViewController {
     //Quand la vue s'affiche on remet a jour la barre de navigation et on vérifie si un utilisateur est sauvegarder dans UserDefault ( cache )
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        FAQButton.isHidden = true
-        SeDecButton.isHidden = true
         userReceived()
-    }
-    private func stockUser(){
-        
     }
     //au lancement de l'application et au chargement du storyboard on va Get pour récuperer les formations, les infoco, les questions/Reponses et les json/html pour l'adrar l'infoCo et processusInscription. Gestion des données, si string stockage direct sinon transformation en json pour pouvoir stocker dans userDefault(qui ne permet pas de stocker des Custom Class directement)
     private func getAccueil(){
-        AccueilAPIHelper().getAccueil("http://localhost:3000/ws/accueil") { (listeFormation, adrarHtml, infoCoHtml, processusInscription, listeInfoCo, listeFAQ, erreur) in
-
+        AccueilAPIHelper().getAccueil() { (listeFormation, adrarHtml, infoCoHtml, processusInscription, listeInfoCo, listeFAQ, erreur) in
             if listeFormation != nil {
                 let formationsBytes = try! JSONEncoder().encode(listeFormation)
                 let formationsJSON = String(decoding: formationsBytes, as: UTF8.self)
@@ -68,7 +66,7 @@ class MenuController: UIViewController {
                     UserDefaults.standard.set(processusInscription?.telephone, forKey:"telephone" )
                 }
                 if processusInscription?.email != nil {
-                    UserDefaults.standard.set(processusInscription?.email, forKey:"email" )
+                    UserDefaults.standard.set(processusInscription?.email, forKey:"emailAdrar" )
                 }
             }
             if listeInfoCo != nil {
@@ -82,11 +80,9 @@ class MenuController: UIViewController {
                 UserDefaults.standard.set(faqJSON, forKey: "faq")
             }
             if erreur != nil {
-                //????
+                print(erreur!)
             }
-
         }
-
     }
 
     //Vérification dans le cache si un utilisateur existe ou non
@@ -111,10 +107,12 @@ class MenuController: UIViewController {
         SwitchButtonAuthOrEspace.setTitle("Se Connecter", for: .normal)
         SwitchInscriptionUtiOrInfoCo.setTitle("S'inscrire", for: .normal)
     }
+    
     //Si l'utilisateur appuie sur "Se déconnecter" présent dans la bar de navigation alors on supprime les données de l"utilisateur du cache.
     @IBAction func deconnectUser(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "utilisateur")
         UserDefaults.standard.removeObject(forKey: "mdp")
+        UserDefaults.standard.removeObject(forKey: "email")
         UserDefaults.standard.removeObject(forKey: "idSession")
         userReceived()
         SeDecButton.isHidden = true
@@ -127,7 +125,6 @@ class MenuController: UIViewController {
             let storyboard = UIStoryboard(name: "InformationCollective", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "infoCo")
             self.present(controller, animated: true, completion: nil)
-            
         } else {
             let storyboard = UIStoryboard(name: "Inscription", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "Inscription")
@@ -147,18 +144,23 @@ class MenuController: UIViewController {
         }
     }
     
-    //Gestion du Menu
+    //Gestion du SideMenu (animation + condition d'affichage)
     @IBAction func SideMenu(_ sender: Any) {
-        if FAQButton.isHidden == false {
-            FAQButton.isHidden = true
-            SeDecButton.isHidden = true
-        } else {
-            FAQButton.isHidden = false
-            if userConnected == true{
+        if !menuOn {
+            if userConnected == false {
+                SeDecButton.isHidden = true
+            } else {
                 SeDecButton.isHidden = false
             }
+            MenuTrailling.constant = 0
+            menuOn = !menuOn
+        } else {
+            MenuTrailling.constant = 160
+            menuOn = !menuOn
         }
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
-    
 }
 

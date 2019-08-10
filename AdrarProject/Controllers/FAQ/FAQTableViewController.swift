@@ -42,7 +42,15 @@ class FAQTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questionsReponses.count
     }
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let lngQuestionReponse = questionsReponses[indexPath.row].question.count + questionsReponses[indexPath.row].reponse.count
+        var heightCell:CGFloat = 60
+        for _ in 1...lngQuestionReponse/10 {
+           heightCell += 4
+        }
+        
+        return heightCell
+    }
     //Envoie de cellule
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let questionReponse = questionsReponses[indexPath.row]
@@ -50,7 +58,6 @@ class FAQTableViewController: UITableViewController {
         cell.setupCell(questionsReponses[indexPath.row])
         cell.questionLbl.text = questionReponse.question
         cell.reponseLbl.text = questionReponse.reponse
-        cell.reponseLbl.isHidden = true
         
         return cell
     }

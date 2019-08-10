@@ -19,6 +19,8 @@ class AuthentificationControllerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         authNonPossibleLbl.isHidden = true
+        self.motDePasseTf.delegate = self
+        self.emailTf.delegate = self
 //
 //        var erreurUtilisateurDidSet:Bool = false {
 //            didSet{
@@ -27,6 +29,7 @@ class AuthentificationControllerViewController: UIViewController {
 //            }
 //        }
     }
+    
     private func getUserAfterAuth(){
         //Si email et motdepasse n'est pas vide alors on lance de maniere asynchrone la méthode auth dans la classe UtilisateurAPIHelper
         if emailTf.text != "" , motDePasseTf.text != "" {
@@ -40,6 +43,8 @@ class AuthentificationControllerViewController: UIViewController {
                         UserDefaults.standard.set(utilisateur!.idSessionConnexion, forKey: "idSession")
                         //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
                         DispatchQueue.main.async {
+                            UserDefaults.standard.set(self.emailTf.text!, forKey: "email")
+                            UserDefaults.standard.set(self.motDePasseTf.text!, forKey: "mdp")
                             self.authNonPossibleLbl.isHidden = true
                             self.dismiss(animated: true, completion: nil)
                         }
@@ -60,7 +65,7 @@ class AuthentificationControllerViewController: UIViewController {
             authNonPossibleLbl.isHidden = false
         }
     }
-    
+    //Si erreur alors affichage de l'erreur en question
     private func changeLblError(_ erreur:String){
         authNonPossibleLbl.text = erreur
         

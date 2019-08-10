@@ -8,9 +8,9 @@
 
 import UIKit
 
-class InscriptionController: UIViewController {
+class InscriptionController: UIViewController{
     
-    
+    @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var prenomTf: UITextField!
     @IBOutlet weak var nomTf: UITextField!
     @IBOutlet weak var emailTf: UITextField!
@@ -18,15 +18,31 @@ class InscriptionController: UIViewController {
     @IBOutlet weak var confirmMdpTf: UITextField!
     @IBOutlet weak var returnError:UILabel!
     
+    @IBOutlet weak var constraintStackView: NSLayoutConstraint!
     let regex = NSRegularExpression()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         returnError.isEnabled = false
-        if #available(iOS 12.0, *) {
-            mdpTf.textContentType = .oneTimeCode
-            confirmMdpTf.textContentType = .oneTimeCode
+        
+        self.prenomTf.delegate = self
+        self.nomTf.delegate = self
+        self.emailTf.delegate = self
+        self.mdpTf.delegate = self
+        self.confirmMdpTf.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    //Gestion de l'affichage du clavier
+    @objc func keyboardWillShow(sender: NSNotification) {
+
+        if self.view.frame.origin.y == 0 {
+            self.view.frame.origin.y -= 100
         }
+    }
+    @objc func keyboardWillHide(sender: NSNotification) {
+        self.view.frame.origin.y += 100
     }
     
     func returnError(_ error:String){
@@ -36,9 +52,10 @@ class InscriptionController: UIViewController {
     
     //Regex utilisé pour Mot de passe
     func isValidPassword(_ password: String) -> Bool {
+        //Regex 8 caractères une lettre majuscule, une lettre minuscule et un chiffre
         //let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
-        //return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
-        return true
+        let passwordRegex = "{4}"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
     }
     //Regex utilisé pour email
     func isValidEmail(testStr:String) -> Bool {
@@ -59,7 +76,7 @@ class InscriptionController: UIViewController {
                 if let email = emailTf.text, isValidEmail(testStr: email){
                     if let mdp = mdpTf.text, isValidPassword(mdp){
                         if mdp == confirmMdpTf.text {
-                            let utilisateur:Utilisateur = Utilisateur(id: nil, nom: nom, prenom: prenom, ddn: nil, email: email, telephone: nil, numeroPe: nil, mdp: mdp, numeroVoie: nil, adresse: nil, complementAdresse: nil, cp: nil, ville: nil, dev: nil, reseau: nil, admin: nil, idSessionConnexion: nil, ID_infoCollective: nil, ID_avancementInscription: nil)
+                            let utilisateur:Utilisateur = Utilisateur(id: nil, nom: nom, prenom: prenom, ddn: nil, email: email, telephone: nil, numeroPe: nil, mdp: mdp, numeroVoie: nil, adresse: nil, complementAdresse: nil, cp: nil, ville: nil, dev: nil, reseau: nil, admin: nil, idSessionConnexion: nil, ID_infoCollective: nil, ID_avancementInscription: nil,documents: nil)
                             DispatchQueue.main.async {
                                 UtilisateurAPIHelper().signIn(utilisateur: utilisateur) { (utilisateurCompletion, erreur) in
                                     if utilisateurCompletion != nil {
@@ -71,6 +88,7 @@ class InscriptionController: UIViewController {
                                         UserDefaults.standard.set(utilisateurCompletion!.idSessionConnexion, forKey: "idSession")
                                         UserDefaults.standard.set(self.mdpTf.text, forKey: "mdp")
                                         UserDefaults.standard.set(utilisateurJSON, forKey: "utilisateur")
+                                        UserDefaults.standard.set(self.emailTf.text, forKey: "email")
                                         //Permet d'afficher que l'utilisateur n'est pas connu/bon quand on la tache asynchrone d'au dessus est fini.
                                         DispatchQueue.main.async {
                                             self.dismiss(animated: true, completion: nil)
@@ -86,7 +104,7 @@ class InscriptionController: UIViewController {
                             returnError("Les deux mots de passes sont différents")
                         }
                     } else {
-                        returnError("Veuillez entrer un mot de passe valide (Le mot de passe doit comporter au minimum 8 caractères, une lettre majuscule, une lettre minuscule et un chiffre)")
+                        returnError("Veuillez entrer un mot de passe valide (Le mot de passe doit comporter au minimum 6 caractères)")
                     }
                 }else{
                     returnError("Veuillez entrer une adresse email valide")

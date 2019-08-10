@@ -12,19 +12,16 @@
 
 import Foundation
 
-private let _urlBase = "localhost:3000/ws/" // à mettre dans les constantes dans le futur
-
 class AccueilAPIHelper {
-    
     typealias ApiCompletionAccueil = (_ formations:[Formation]?,_ adrarWebView: String?,_ infoCoWebView: String?,_ salarie:ProcessusInscription?,_ listInfoCo:[InformationCollective]?,_ listeFAQ:[QuestionReponse]? ,_ errorString:String?) -> Void//comprendre le typealias
     
     var urlAccueil : String {
         return _urlBase + "accueil" // récuper l'url ou se situe le json
     }
     
-    //Requete GET qui attend string(url) et une completion
-    func getAccueil(_ string:String, completion :ApiCompletionAccueil?){
-        if let url = URL(string: string){
+    //Requete GET qui prend en paramètre le type attendu en retour 
+    func getAccueil( completion :ApiCompletionAccueil?){
+        if let url = URL(string: urlAccueil){
             //Recuperation de donnée
             URLSession.shared.dataTask(with: url){(data,response,error) in
                 //si erreur existe alors tout est nul et on renvoie l'erreur et sa description

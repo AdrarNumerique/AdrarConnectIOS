@@ -11,46 +11,27 @@
 import UIKit
 
 class RoundButton: UIButton {
-    
+    //programmatique
     override init(frame: CGRect) {
         super.init(frame:frame)
         setup()
     }
-    
+    //storyboard/xib
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
     
-    func setup(){
+    //Changement graphique de manière programatique de bouton
+    private func setup(){
         clipsToBounds = true
         contentMode = .scaleAspectFill
-        layer.cornerRadius = frame.height/15
-        layer.borderColor = Gris.cgColor
+        layer.cornerRadius = frame.height/8
+        layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 2
+        self.setTitleShadowColor(.black, for: .normal)
     }
     
 }
-extension UIView {
-    
-    func animateButtonDown() {
-        
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .curveEaseIn], animations: {
-            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            self.backgroundColor = Gris
-        }, completion: nil)
-    }
-    
-    func animateButtonUp() {
-        
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.allowUserInteraction, .curveEaseOut], animations: {
-            self.transform = CGAffineTransform.identity
-        }, completion: nil)
-    }
-    
-    func myAnimate(){
-        UIView.animate(withDuration:0.1,delay:0.0, options: [.allowUserInteraction, .curveEaseOut], animations:{
-            
-        }, completion: nil)
-    }
-}
+
+

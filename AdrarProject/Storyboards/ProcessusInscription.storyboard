@@ -30,8 +30,8 @@
                                 <rect key="frame" x="16" y="97" width="343" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
-                                    <segment title="Salarié"/>
                                     <segment title="Demandeur d'emploi"/>
+                                    <segment title="Salarié"/>
                                 </segments>
                                 <color key="tintColor" red="0.94901960780000005" green="0.21176470589999999" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -39,18 +39,26 @@
                                     <action selector="SegmentedSituation:" destination="dBo-5r-Q5V" eventType="valueChanged" id="sHn-zI-0Tl"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salarié" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dol-pQ-36Z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Demandeur d'emploi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dol-pQ-36Z">
                                 <rect key="frame" x="16" y="146" width="343" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" red="0.94901960784313721" green="0.21176470588235294" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMb-ek-wu4">
+                                <rect key="frame" x="0.0" y="180.5" width="383" height="349.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eqt-Em-R8l">
                                 <rect key="frame" x="20" y="530" width="335" height="125"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdK-Kg-FaQ" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdK-Kg-FaQ" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="8" width="335" height="117"/>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.7725490196" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         <state key="normal" title="S'inscrire">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,7 +67,7 @@
                                             <segue destination="qLF-As-hKw" kind="show" id="rgP-Ri-hi8"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-Z3-sm4">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="GYN-Z3-sm4">
                                         <rect key="frame" x="0.0" y="8" width="335" height="117"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iO2-Ts-VBA">
@@ -92,14 +100,6 @@
                                     <constraint firstAttribute="height" constant="125" id="yEe-dc-WKC"/>
                                 </constraints>
                             </view>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMb-ek-wu4">
-                                <rect key="frame" x="8" y="180.5" width="359" height="349.5"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,9 +117,9 @@
                             <constraint firstItem="Eqt-Em-R8l" firstAttribute="top" secondItem="AMb-ek-wu4" secondAttribute="bottom" id="loF-Td-eZl"/>
                             <constraint firstItem="dol-pQ-36Z" firstAttribute="top" secondItem="aAi-cu-v2d" secondAttribute="bottom" constant="21" id="mO0-BW-vaF"/>
                             <constraint firstItem="qhM-4l-JQ7" firstAttribute="trailing" secondItem="Eqt-Em-R8l" secondAttribute="trailing" constant="20" id="tTX-jd-dUI"/>
-                            <constraint firstItem="qhM-4l-JQ7" firstAttribute="trailing" secondItem="AMb-ek-wu4" secondAttribute="trailing" constant="8" id="thn-pD-GUt"/>
+                            <constraint firstItem="qhM-4l-JQ7" firstAttribute="trailing" secondItem="AMb-ek-wu4" secondAttribute="trailing" constant="-8" id="thn-pD-GUt"/>
                             <constraint firstItem="AMb-ek-wu4" firstAttribute="top" secondItem="dol-pQ-36Z" secondAttribute="bottom" constant="8" id="vLO-nd-ugC"/>
-                            <constraint firstItem="AMb-ek-wu4" firstAttribute="leading" secondItem="qhM-4l-JQ7" secondAttribute="leading" constant="8" id="yjT-EP-Jrq"/>
+                            <constraint firstItem="AMb-ek-wu4" firstAttribute="leading" secondItem="qhM-4l-JQ7" secondAttribute="leading" id="yjT-EP-Jrq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qhM-4l-JQ7"/>
                     </view>
@@ -136,6 +136,7 @@
                         <outlet property="ButtonToinscrire" destination="JdK-Kg-FaQ" id="bCa-co-7jk"/>
                         <outlet property="MoreInformation" destination="Eqt-Em-R8l" id="FyU-i5-zer"/>
                         <outlet property="SituationLbl" destination="dol-pQ-36Z" id="Tp9-xh-RpX"/>
+                        <outlet property="constraintWebView" destination="loF-Td-eZl" id="DhK-ri-aG9"/>
                         <outlet property="contactSV" destination="GYN-Z3-sm4" id="o3H-uf-8Pr"/>
                         <outlet property="descriptionWV" destination="AMb-ek-wu4" id="kBh-V6-Kcg"/>
                         <outlet property="mailTV" destination="ixd-3Z-y8P" id="vbE-ia-sEc"/>

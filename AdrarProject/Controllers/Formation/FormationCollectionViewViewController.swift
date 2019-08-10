@@ -10,9 +10,11 @@ import UIKit
 
 class FormationCollectionViewViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var formations : [Formation] = []
+    private var formations : [Formation] = []
     private let segueID = "detailFormation"
     private var cellId = "mainFormation"
+    private var data:Data?
+    var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -36,6 +38,18 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
         return formations
     }
     
+    func activityIndicatorStart(_ cell:FormationCollectionViewCell){
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .black
+        
+        //activityIndicator.frame = CGRect(x: cell.frame.midX, y: cell.frame.midY, width: cell.frame.width, height: cell.frame.height)
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+    }
+    func activityIndicatorStop(){
+        activityIndicator.stopAnimating()
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -57,6 +71,31 @@ class FormationCollectionViewViewController: UIViewController,UICollectionViewDe
        let formation = formations[indexPath.row]
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? FormationCollectionViewCell{
             cell.intituleFormation.text = formation.intitule
+            if !formation.urlPhoto.isEmpty {
+                activityIndicatorStart(cell)
+                DispatchQueue.global().async {
+                     //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                        let url = URL(string: formation.urlPhoto)
+                        self.data = try? Data(contentsOf: url!)
+                        if self.data != nil {
+                            cell.imageFormation.image = UIImage(data: self.data!)
+                            self.activityIndicatorStop()
+                        }
+                        DispatchQueue.main.async {
+                            if cell.imageFormation.image == nil {
+                                cell.imageFormation.image = UIImage(named: "adrar")
+                                cell.imageFormation.contentMode = .scaleAspectFit
+                                self.activityIndicatorStop()
+                            }
+                        }
+                    })
+                    
+                }
+            } else {
+                cell.imageFormation.image = UIImage(named: "adrar")
+                cell.imageFormation.contentMode = .scaleAspectFit
+            }
             return cell
         }
         return UICollectionViewCell()

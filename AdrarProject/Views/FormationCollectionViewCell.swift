@@ -14,13 +14,16 @@ class FormationCollectionViewCell: UICollectionViewCell {
     //Outlet d'un Label
     @IBOutlet weak var intituleFormation: UILabel!
     
+    @IBOutlet weak var imageFormation: UIImageView!
     
-    var formation:Formation? {
-        //permet d'effectuer une  action quand la propriété est modifiée, observer la modification de propriété stockées.
-        didSet{
-            if formation != nil {
-                intituleFormation.text = formation!.intitule
-            }
-        }
-    }
+   
+//    var formation:Formation? {
+//        //permet d'effectuer une  action quand la propriété est modifiée, observer la modification de propriété stockées.
+//        didSet{
+//            if formation != nil {
+//                intituleFormation.text = formation!.intitule
+//                imageFormation.image
+//            }
+//        }
+//    }
 }

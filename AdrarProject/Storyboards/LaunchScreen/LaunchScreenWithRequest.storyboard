@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bUW-EW-EJ5">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="drt-bD-7O2">
+            <objects>
+                <viewController id="bUW-EW-EJ5" customClass="LaunchScreenViewController" customModule="AdrarProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TBO-Mb-unQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO ADRAR CONNECT" translatesAutoresizingMaskIntoConstraints="NO" id="HkX-6F-Bsn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="AHa-wZ-pNq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HkX-6F-Bsn" firstAttribute="top" secondItem="B1F-u7-WL4" secondAttribute="top" id="8Jf-DT-3Ie"/>
+                            <constraint firstItem="B1F-u7-WL4" firstAttribute="trailing" secondItem="HkX-6F-Bsn" secondAttribute="trailing" id="LdO-1e-V12"/>
+                            <constraint firstItem="HkX-6F-Bsn" firstAttribute="leading" secondItem="B1F-u7-WL4" secondAttribute="leading" id="pfr-CI-MoQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B1F-u7-WL4"/>
+                    </view>
+                    <connections>
+                        <outlet property="globalView" destination="TBO-Mb-unQ" id="RBF-jw-CjE"/>
+                        <outlet property="imageLaunch" destination="HkX-6F-Bsn" id="EVH-gl-xb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V6m-cS-6Pe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LOGO ADRAR CONNECT" width="320" height="80"/>
+    </resources>
+</document>

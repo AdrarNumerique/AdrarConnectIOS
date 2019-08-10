@@ -9,7 +9,7 @@
 import Foundation
 
 
-class QuestionReponse :Codable{
+struct QuestionReponse :Codable{
     var id:Int
     var question:String
     var reponse:String

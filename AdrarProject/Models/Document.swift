@@ -8,9 +8,12 @@
 
 import Foundation
 
-struct Document: Codable {
-    var id:Int
-    var chemin:String
-    var etat:Int
-    var type:Int
+struct Document: Codable{
+    var id: Int?
+    var id_users: Int
+    var id_typeDocument: Int
+    var base64: String
+    var etat: Int
 }
+
+

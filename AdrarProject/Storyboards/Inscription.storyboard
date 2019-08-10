@@ -18,12 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV3-Ed-zdy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="10"/>
+                                <color key="backgroundColor" red="0.51372549020000002" green="0.7725490196" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="g0F-J8-ye4"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IIa-af-SCX">
                                 <rect key="frame" x="12" y="82" width="351" height="577"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zWD-iD-rKp" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
                                         <rect key="frame" x="12" y="445" width="327" height="120"/>
-                                        <color key="backgroundColor" red="0.51372549020000002" green="0.7725490196" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="KKg-iz-1n5"/>
                                         </constraints>
@@ -45,33 +52,33 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="78I-eu-O2I">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="78I-eu-O2I">
                                         <rect key="frame" x="12" y="87" width="327" height="346"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Prénom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZg-5c-zyl">
-                                                <rect key="frame" x="0.0" y="0.0" width="327" height="46"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="327" height="67"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="given-name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nom" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8g-DZ-Vn4">
-                                                <rect key="frame" x="0.0" y="65" width="327" height="46"/>
+                                                <rect key="frame" x="0.0" y="70" width="327" height="66.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="family-name"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="12P-FW-xdB">
-                                                <rect key="frame" x="0.0" y="130" width="327" height="46"/>
+                                                <rect key="frame" x="0.0" y="139.5" width="327" height="67"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot De Passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RsY-07-TJl">
-                                                <rect key="frame" x="0.0" y="195" width="327" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="209.5" width="327" height="66.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmation Mot De Passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i9q-tl-HxX">
-                                                <rect key="frame" x="0.0" y="259.5" width="327" height="86.5"/>
+                                                <rect key="frame" x="0.0" y="279" width="327" height="67"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,15 +110,8 @@
                                     <constraint firstAttribute="trailing" secondItem="RD4-TP-OB7" secondAttribute="trailing" constant="12" id="rYg-Sh-V0a"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NV3-Ed-zdy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="10"/>
-                                <color key="backgroundColor" red="0.51372549020000002" green="0.7725490196" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="g0F-J8-ye4"/>
-                                </constraints>
-                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4oU-LF-JhP" firstAttribute="trailing" secondItem="IIa-af-SCX" secondAttribute="trailing" constant="12" id="3Zd-Hq-Xku"/>
                             <constraint firstItem="4oU-LF-JhP" firstAttribute="bottom" secondItem="IIa-af-SCX" secondAttribute="bottom" constant="8" id="Eeh-7e-DDw"/>
@@ -135,11 +135,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="confirmMdpTf" destination="i9q-tl-HxX" id="8aB-22-tFf"/>
+                        <outlet property="constraintStackView" destination="2b3-1P-Xw5" id="VMK-1M-83U"/>
                         <outlet property="emailTf" destination="12P-FW-xdB" id="plE-Ts-ybA"/>
                         <outlet property="mdpTf" destination="RsY-07-TJl" id="nmD-xQ-epu"/>
                         <outlet property="nomTf" destination="y8g-DZ-Vn4" id="Jlh-Tv-9mA"/>
                         <outlet property="prenomTf" destination="HZg-5c-zyl" id="9R0-CY-97T"/>
                         <outlet property="returnError" destination="pvO-pC-3kL" id="pDz-2C-WJD"/>
+                        <outlet property="stackView" destination="78I-eu-O2I" id="xTR-LC-HCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNN-yh-3uw" userLabel="First Responder" sceneMemberID="firstResponder"/>

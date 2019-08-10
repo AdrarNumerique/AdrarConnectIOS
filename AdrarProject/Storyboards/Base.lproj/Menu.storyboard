@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r5r-gi-3aD">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,51 +23,17 @@
             <objects>
                 <viewController storyboardIdentifier="MenuView" id="onC-wo-Zqp" customClass="MenuController" customModule="AdrarProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hao-Cy-IBQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-PW-5gX">
-                                <rect key="frame" x="254" y="64" width="121" height="70"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJp-YO-RJ2">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="32"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                        <state key="normal" title="FAQ">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="DvE-bD-kJW" kind="show" id="fdd-T7-4fd"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQO-C5-gyI">
-                                        <rect key="frame" x="0.0" y="38" width="121" height="32"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
-                                        <state key="normal" title="Se déconnecter">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deconnectUser:" destination="onC-wo-Zqp" eventType="touchUpInside" id="3e7-tW-S4z"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baniere_adrar" translatesAutoresizingMaskIntoConstraints="NO" id="J4k-rl-laQ">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="1Sn-Uz-vnZ"/>
-                                </constraints>
-                            </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO-ERN-GEN2017-1" translatesAutoresizingMaskIntoConstraints="NO" id="J4k-rl-laQ">
-                                <rect key="frame" x="0.0" y="567" width="375" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="ekR-HI-RTk"/>
+                                    <constraint firstAttribute="height" constant="80" id="ekR-HI-RTk"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rj2-7F-oNp">
-                                <rect key="frame" x="133.5" y="529" width="108" height="30"/>
+                                <rect key="frame" x="153" y="580" width="108" height="194"/>
                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="18"/>
                                 <state key="normal" title="Se connecter">
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,10 +43,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH0-9l-M9q">
-                                <rect key="frame" x="0.0" y="144" width="375" height="377"/>
+                                <rect key="frame" x="0.0" y="158" width="414" height="414"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="DYu-pF-iBE" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="20" width="164" height="164"/>
+                                        <rect key="frame" x="20" y="20" width="183.66666666666666" height="183.66666666666666"/>
                                         <color key="backgroundColor" red="0.2784313725" green="0.76470588240000004" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                         <state key="normal" title="L'Adrar">
@@ -88,11 +54,11 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="x1X-8B-fFn" kind="custom" customClass="SegueFromLeft" customModule="AdrarProject" customModuleProvider="target" id="0Dh-mY-XPR"/>
+                                            <segue destination="x1X-8B-fFn" kind="show" id="0Dh-mY-XPR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="BUj-ju-NFb" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
-                                        <rect key="frame" x="191" y="20" width="164" height="164"/>
+                                        <rect key="frame" x="210.66666666666663" y="20" width="183.33333333333337" height="183.66666666666666"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.6588235294" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="BUj-ju-NFb" secondAttribute="height" multiplier="1:1" id="Cae-2g-62h"/>
@@ -103,11 +69,11 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="C0P-L6-b6t" kind="custom" identifier="Menu" customClass="SegueFromRight" customModule="AdrarProject" customModuleProvider="target" id="cpL-OX-ZjX"/>
+                                            <segue destination="C0P-L6-b6t" kind="show" identifier="" id="cpL-OX-ZjX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Qoy-i4-q5b" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
-                                        <rect key="frame" x="191" y="193" width="164" height="164"/>
+                                        <rect key="frame" x="210.66666666666663" y="210.66666666666669" width="183.33333333333337" height="183.33333333333331"/>
                                         <color key="backgroundColor" red="0.51372549020000002" green="0.7725490196" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                         <state key="normal" title="S'inscrire">
@@ -119,7 +85,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xWI-es-Foo" customClass="RoundButton" customModule="AdrarProject" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="193" width="164" height="164"/>
+                                        <rect key="frame" x="20" y="210.66666666666669" width="183.66666666666666" height="183.33333333333331"/>
                                         <color key="backgroundColor" red="0.94901960784313721" green="0.34509803921568627" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="20"/>
                                         <state key="normal" title="Processus d'inscription">
@@ -127,17 +93,17 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Lpt-Ug-cba" kind="custom" customClass="SegueFromLeft" customModule="AdrarProject" customModuleProvider="target" id="CLJ-6C-Kd1"/>
+                                            <segue destination="Lpt-Ug-cba" kind="show" id="CLJ-6C-Kd1"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Qoy-i4-q5b" firstAttribute="leading" secondItem="xWI-es-Foo" secondAttribute="trailing" constant="7" id="0iq-Gv-fMp"/>
-                                    <constraint firstItem="Qoy-i4-q5b" firstAttribute="top" secondItem="BUj-ju-NFb" secondAttribute="bottom" constant="9" id="14B-AI-oTQ"/>
+                                    <constraint firstItem="Qoy-i4-q5b" firstAttribute="top" secondItem="BUj-ju-NFb" secondAttribute="bottom" constant="7" id="14B-AI-oTQ"/>
                                     <constraint firstItem="BUj-ju-NFb" firstAttribute="top" secondItem="IH0-9l-M9q" secondAttribute="top" constant="20" id="2W8-ue-DuT"/>
                                     <constraint firstItem="xWI-es-Foo" firstAttribute="width" secondItem="DYu-pF-iBE" secondAttribute="width" id="4rt-wW-Ie3"/>
-                                    <constraint firstItem="xWI-es-Foo" firstAttribute="top" secondItem="DYu-pF-iBE" secondAttribute="bottom" constant="9" id="9hg-Kx-ohx"/>
+                                    <constraint firstItem="xWI-es-Foo" firstAttribute="top" secondItem="DYu-pF-iBE" secondAttribute="bottom" constant="7" id="9hg-Kx-ohx"/>
                                     <constraint firstItem="BUj-ju-NFb" firstAttribute="width" secondItem="DYu-pF-iBE" secondAttribute="width" id="9nm-YS-S1c"/>
                                     <constraint firstItem="BUj-ju-NFb" firstAttribute="leading" secondItem="DYu-pF-iBE" secondAttribute="trailing" constant="7" id="Fjb-KG-ORP"/>
                                     <constraint firstItem="DYu-pF-iBE" firstAttribute="top" secondItem="IH0-9l-M9q" secondAttribute="top" constant="20" id="PB9-fW-SrZ"/>
@@ -153,25 +119,74 @@
                                     <constraint firstItem="Qoy-i4-q5b" firstAttribute="height" secondItem="DYu-pF-iBE" secondAttribute="height" id="ye0-Nk-Rlb"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJv-ap-Faj" customClass="SideMenu" customModule="AdrarProject" customModuleProvider="target">
+                                <rect key="frame" x="424" y="88" width="150" height="808"/>
+                                <subviews>
+                                    <stackView contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="UHR-PW-5gX">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="122"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJp-YO-RJ2">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Rch-8E-7aQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="FAQ">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="DvE-bD-kJW" kind="show" id="fdd-T7-4fd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQO-C5-gyI">
+                                                <rect key="frame" x="0.0" y="61" width="150" height="61"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
+                                                <state key="normal" title="Se déconnecter">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deconnectUser:" destination="onC-wo-Zqp" eventType="touchUpInside" id="3e7-tW-S4z"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="8ln-Tr-EqQ"/>
+                                    <constraint firstItem="UHR-PW-5gX" firstAttribute="leading" secondItem="NJv-ap-Faj" secondAttribute="leading" id="bM5-SA-UGd"/>
+                                    <constraint firstAttribute="trailing" secondItem="UHR-PW-5gX" secondAttribute="trailing" id="mgJ-Zv-KsX"/>
+                                    <constraint firstItem="UHR-PW-5gX" firstAttribute="top" secondItem="NJv-ap-Faj" secondAttribute="top" id="uzd-Ax-ccr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="IH0-9l-M9q" firstAttribute="trailing" secondItem="HE4-Wk-hxK" secondAttribute="trailing" id="5tM-1J-Yvv"/>
                             <constraint firstItem="IH0-9l-M9q" firstAttribute="centerX" secondItem="Hao-Cy-IBQ" secondAttribute="centerX" id="AJn-9S-vfb"/>
                             <constraint firstItem="rj2-7F-oNp" firstAttribute="top" secondItem="IH0-9l-M9q" secondAttribute="bottom" constant="8" id="Bjq-3x-9gF"/>
-                            <constraint firstItem="UHR-PW-5gX" firstAttribute="top" secondItem="HE4-Wk-hxK" secondAttribute="top" id="HDg-8p-ck8"/>
                             <constraint firstItem="J4k-rl-laQ" firstAttribute="top" secondItem="rj2-7F-oNp" secondAttribute="bottom" constant="8" id="JcT-VZ-nf6"/>
+                            <constraint firstItem="NJv-ap-Faj" firstAttribute="top" secondItem="HE4-Wk-hxK" secondAttribute="top" id="KTc-OS-w5O"/>
                             <constraint firstItem="rj2-7F-oNp" firstAttribute="centerX" secondItem="Hao-Cy-IBQ" secondAttribute="centerX" id="Ndo-gb-F25"/>
                             <constraint firstItem="J4k-rl-laQ" firstAttribute="leading" secondItem="HE4-Wk-hxK" secondAttribute="leading" id="Toy-UC-58A"/>
-                            <constraint firstItem="IH0-9l-M9q" firstAttribute="top" secondItem="HE4-Wk-hxK" secondAttribute="top" constant="80" id="iVf-Yz-gwf"/>
+                            <constraint firstItem="NJv-ap-Faj" firstAttribute="trailing" secondItem="HE4-Wk-hxK" secondAttribute="trailing" constant="160" id="ZVa-ID-RIt"/>
+                            <constraint firstItem="IH0-9l-M9q" firstAttribute="top" secondItem="HE4-Wk-hxK" secondAttribute="top" constant="70" id="iVf-Yz-gwf"/>
                             <constraint firstItem="IH0-9l-M9q" firstAttribute="leading" secondItem="HE4-Wk-hxK" secondAttribute="leading" id="lgp-jq-gvR"/>
-                            <constraint firstAttribute="trailing" secondItem="UHR-PW-5gX" secondAttribute="trailing" id="oHL-dR-Lye"/>
+                            <constraint firstItem="NJv-ap-Faj" firstAttribute="bottom" secondItem="Hao-Cy-IBQ" secondAttribute="bottom" id="tRz-Vn-yRs"/>
                             <constraint firstItem="J4k-rl-laQ" firstAttribute="bottom" secondItem="HE4-Wk-hxK" secondAttribute="bottom" id="uz1-HG-Fuf"/>
                             <constraint firstItem="J4k-rl-laQ" firstAttribute="trailing" secondItem="HE4-Wk-hxK" secondAttribute="trailing" id="z6O-XE-Ypi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HE4-Wk-hxK"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qkn-xg-Mx6">
+                        <barButtonItem key="leftBarButtonItem" width="50" id="Kki-9v-vGi"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-menu-50" style="done" id="F7u-yu-X6m">
                             <inset key="imageInsets" minX="5" minY="-2" maxX="-13" maxY="0.0"/>
                             <inset key="landscapeImageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="8"/>
@@ -184,6 +199,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="FAQButton" destination="oJp-YO-RJ2" id="5eK-DN-QvA"/>
+                        <outlet property="MenuDeroulant" destination="NJv-ap-Faj" id="y4N-fT-eWZ"/>
+                        <outlet property="MenuTrailling" destination="ZVa-ID-RIt" id="OfE-si-xKM"/>
                         <outlet property="SeDecButton" destination="FQO-C5-gyI" id="NZC-og-qsv"/>
                         <outlet property="SwitchButtonAuthOrEspace" destination="rj2-7F-oNp" id="Qla-38-sX3"/>
                         <outlet property="SwitchInscriptionUtiOrInfoCo" destination="Qoy-i4-q5b" id="NRL-fR-jgn"/>
@@ -193,13 +210,13 @@
             </objects>
             <point key="canvasLocation" x="1948" y="135.38230884557723"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Nav-->
         <scene sceneID="CHm-FM-64C">
             <objects>
-                <navigationController storyboardIdentifier="Menu" automaticallyAdjustsScrollViewInsets="NO" id="r5r-gi-3aD" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Menu" automaticallyAdjustsScrollViewInsets="NO" id="r5r-gi-3aD" customClass="Nav" customModule="AdrarProject" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kyw-mj-h8M">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -215,7 +232,7 @@
         <!--FormationB-->
         <scene sceneID="On6-Zt-8bd">
             <objects>
-                <viewControllerPlaceholder storyboardName="FormationB" referencedIdentifier="FormationB" id="C0P-L6-b6t" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="FormationB" storyboardName="FormationB" referencedIdentifier="FormationB" id="C0P-L6-b6t" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3IC-t1-jKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2493" y="-323"/>
@@ -248,7 +265,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LOGO-ERN-GEN2017-1" width="703" height="167"/>
+        <image name="baniere_adrar" width="703" height="167"/>
         <image name="icons8-menu-50" width="50" height="50"/>
     </resources>
 </document>

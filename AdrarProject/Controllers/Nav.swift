@@ -14,11 +14,8 @@ class Nav: UINavigationController {
         super.viewDidLoad()
         
         //Barre de navigation de base, à voir si utilisable partout.
-        navigationBar.barTintColor = .darkGray
-        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white,.font:UIFont.italicSystemFont(ofSize: 20)]
-        UINavigationBar.appearance().isTranslucent = false
-        
+//        navigationBar.barTintColor = .darkGray
+//        navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white,.font:UIFont.italicSystemFont(ofSize: 20)]
+//        UINavigationBar.appearance().isTranslucent = false
     }
-    
-
 }

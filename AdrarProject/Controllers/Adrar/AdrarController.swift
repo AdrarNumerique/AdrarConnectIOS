@@ -16,24 +16,27 @@ class AdrarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         infoAdrarWV.navigationDelegate = self
+        imageWhileLoad()
+        loadHtml()
+    }
+    func imageWhileLoad(){
         loadingIV = LoadingView(frame: CGRect(x: view.frame.width / 2 - 75  , y: view.frame.height / 2 - 75, width: 150, height: 150))
         loadingIV?.start()
         if loadingIV != nil {
             view.addSubview(loadingIV!)
         }
+    }
+    func loadHtml(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { //Changement du timer de l'image d'attente.
             if let infoAdrarRecu = UserDefaults.standard.string(forKey: "adrar_html") {
                 self.infoAdrarWV.loadHTMLString(infoAdrarRecu, baseURL: nil)
             }
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        //tester l'affichage webview
-    }
+
     
     //Revenir en arriere
-@IBAction func backMenuFromAdrar(_ sender: Any) {
+    @IBAction func backMenuFromAdrar(_ sender: Any) {
        dismiss(animated: true, completion: nil)
     }
 }
@@ -44,7 +47,6 @@ extension AdrarController: WKNavigationDelegate {
         loadingIV?.removeFromSuperview()
         loadingIV = nil
     }
-    
 }
 
 

@@ -13,18 +13,16 @@ class InfoCollectiveTableViewCell: UITableViewCell {
     
     var infoCo:InformationCollective!
     var userReservation:Int?
-    let store = EKEventStore()
     
     @IBOutlet weak var descView: UIView!
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var lieuLbl: UILabel!
     @IBOutlet weak var etatInfoCo: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    //changement de couleur et de texte en fonction de si l'infoCo est complete ou non
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         if infoCo.id == userReservation {
@@ -48,36 +46,7 @@ class InfoCollectiveTableViewCell: UITableViewCell {
         descView.layer.cornerRadius = frame.height/20
     }
     
-    func eventCalendar(with title:String, forDate eventStartDate:Date, toDate eventEndDate:Date) {
-        store.requestAccess(to: .event) { (succes, error) in
-            if error == nil {
-                let event = EKEvent.init(eventStore: self.store)
-                event.title = title
-                event.calendar = self.store.defaultCalendarForNewEvents
-                event.startDate = eventStartDate
-                event.endDate = eventEndDate
-                
-                let alarm = EKAlarm.init(absoluteDate: Date.init(timeInterval: -3600, since: event.startDate))
-                event.addAlarm(alarm)
-                
-                do{
-                    try self.store.save(event, span: .thisEvent)
-                    
-                } catch let error as NSError {
-                    print("Impossible de sauvegarder à cause de l'erreur :\(error)")
-                }
-            } else {
-                 print("Erreur = \(String(describing: error?.localizedDescription))")
-            }
-        }
-        
-        
-    }
     
-    @IBAction func addToCalendarBtn(_ sender: Any) {
-        let date = Date(timeIntervalSince1970: TimeInterval(infoCo?.date ?? 0))
-        if infoCo.complet == 0 {
-            eventCalendar(with: "Information Collective à l'ADRAR", forDate:date , toDate: date)
-        }
-    }
+    
+    
 }
